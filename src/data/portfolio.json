@@ -340,6 +340,162 @@
           "liveUrl": null,
           "repositoryUrl": "https://github.com/angcoder-c/LispInterpreter"
         }
+      },
+      {
+        "slug": "food-recomendation",
+        "title": "FOOD RECOMENDATION SYSTEM",
+        "description": "Este proyecto es una plataforma de recomendaciones de comida que permite a los usuarios explorar menús de diferentes restaurantes, dar 'like' a productos, y recibir recomendaciones personalizadas. Utiliza Next.js, Neo4j como base de datos.",
+        "image": "https://private-user-images.githubusercontent.com/58778570/599790551-0968719f-86e3-488e-9e2d-2d0b5a49ec86.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtlI6ImtlZTUiLCJleHAiOjE3ODAyMDE5MzIsIm5iZiI6MTc4MDIwMTYzMiwicGF0aCI6Ii81ODc3ODU3MC81OTk3OTA1NTEtMDk2ODcxOWYtODZlMy00ODhlLTllMmQtMmQwYjVhNDllYzg2LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA1MzElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNTMxVDA0MjcxMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTVmMjk3ZTEzODVmNTA2YWU2NGIwNDNlMzI5ZTllNTc0NDAyNmY5ZDY4YzU5NjA4MzU5ZGM5MDc4NmMxYjc4NjMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRmdpZiJ9.1gyVXFR-j2mJaPcGYT-dURbzPqEMNEpRj0sTxHoc-C0",
+        "tech": ["NEXT.JS", "NEO4J", "SHADCN UI", "TAILWIND CSS", "TYPESCRIPT", "JEST"],
+        "status": "LIVE",
+        "url": "/projects/food-recomendation",
+        "detail": {
+          "projectId": "005",
+          "systemStatus": "LIVE",
+          "terminalCommand": "cat FOOD_RECOMMENDATION.md",
+          "media": {
+            "imageId": "1x001_MEDIA",
+            "previewMode": "ACTIVE",
+            "alt": "Food Recommendation System interface preview",
+            "videoUrl": null
+          },
+          "specs": {
+            "role": "Lead Developer",
+            "stack": ["Next.js", "Jest", "Neo4j", "ShadCN UI", "Tailwind CSS"],
+            "status": "STABLE",
+            "year": "2025",
+            "category": "FULLSTACK",
+            "scope": "ACADEMIC_PROJECT"
+          },
+          "features": [
+            {
+              "icon": "[+]",
+              "title": "SISTEMA DE RECOMENDACIÓN BASADO EN GRAFOS",
+              "description": "Implementación de un motor de recomendaciones utilizando Neo4j para modelar relaciones entre usuarios, restaurantes y productos, permitiendo sugerencias personalizadas basadas en preferencias e interacciones."
+            },
+            {
+              "icon": "[+]",
+              "title": "FILTRADO COLABORATIVO POR INTERACCIONES",
+              "description": "Generación de recomendaciones mediante un enfoque item-collaborative filtering, analizando los productos marcados con 'like' por los usuarios para identificar patrones de consumo similares."
+            },
+            {
+              "icon": "=>",
+              "title": "EXPLORACIÓN DE MENÚS Y RESTAURANTES",
+              "description": "Interfaz moderna desarrollada con Next.js y ShadCN UI que permite navegar por restaurantes, visualizar menús y descubrir nuevas opciones gastronómicas de forma intuitiva."
+            },
+            {
+              "icon": "=>",
+              "title": "ARQUITECTURA FULLSTACK MODERNA",
+              "description": "Aplicación construida con Next.js, TypeScript y Neo4j, utilizando una arquitectura escalable que integra frontend, backend y base de datos orientada a grafos en una sola plataforma."
+            }
+          ],
+          "liveUrl": "https://food-recommendations-p2.vercel.app/",
+          "repositoryUrl": "https://github.com/angcoder-c/food-recommendations-p2"
+        }
+      },
+      {
+        "slug": "series-app",
+        "title": "SERIES APP",
+        "description": "Aplicación full-stack para gestión de series. Backend construido con FastAPI y PostgreSQL, frontend con JavaScript Vanilla.",
+        "image": "https://private-user-images.githubusercontent.com/58778570/599790551-0968719f-86e3-488e-9e2d-2d0b5a49ec86.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtlI6ImtlZTUiLCJleHAiOjE3ODAyMDE5MzIsIm5iZiI6MTc4MDIwMTYzMiwicGF0aCI6Ii81ODc3ODU3MC81OTk3OTA1NTEtMDk2ODcxOWYtODZlMy00ODhlLTllMmQtMmQwYjVhNDllYzg2LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA1MzElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNTMxVDA0MjcxMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTVmMjk3ZTEzODVmNTA2YWU2NGIwNDNlMzI5ZTllNTc0NDAyNmY5ZDY4YzU5NjA4MzU5ZGM5MDc4NmMxYjc4NjMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRmdpZiJ9.1gyVXFR-j2mJaPcGYT-dURbzPqEMNEpRj0sTxHoc-C0",
+        "tech": ["NEXT.JS", "NEO4J", "SHADCN UI", "TAILWIND CSS", "TYPESCRIPT", "JEST"],
+        "status": "LIVE",
+        "url": "/projects/series-app",
+        "detail": {
+          "projectId": "006",
+          "systemStatus": "LIVE",
+          "terminalCommand": "cat SERIES_APP.md",
+          "media": {
+            "imageId": "1x001_MEDIA",
+            "previewMode": "ACTIVE",
+            "alt": "Series App interface preview",
+            "videoUrl": null
+          },
+          "specs": {
+            "role": "Full-Stack Developer",
+            "stack": ["Next.js", "Jest", "Neo4j", "ShadCN UI", "Tailwind CSS"],
+            "status": "STABLE",
+            "year": "2026",
+            "category": "FULLSTACK",
+            "scope": "ACADEMIC_PROJECT"
+          },
+          "features": [
+            {
+              "icon": "[+]",
+              "title": "ARQUITECTURA FULL-STACK MODULAR",
+              "description": "Desarrollo de una aplicación web completa separando responsabilidades entre frontend y backend mediante una arquitectura basada en API REST."
+            },
+            {
+              "icon": "[+]",
+              "title": "BACKEND DE ALTO RENDIMIENTO",
+              "description": "Construcción de servicios backend con FastAPI y PostgreSQL, aprovechando tipado estático, validación automática y consultas eficientes."
+            },
+            {
+              "icon": "=>",
+              "title": "CONSUMO DE APIS Y EXPERIENCIA DE USUARIO",
+              "description": "Implementación de una interfaz interactiva en JavaScript Vanilla capaz de consumir servicios REST y actualizar información en tiempo real."
+            },
+            {
+              "icon": "=>",
+              "title": "GESTIÓN EFICIENTE DE DATOS",
+              "description": "Modelado relacional y persistencia de información para administrar catálogos de series de manera escalable y mantenible."
+            }
+          ],
+          "liveUrl": "https://series-app-omega.vercel.app/",
+          "repositoryUrl": "https://github.com/angcoder-c/series-app"
+        }
+      },
+      {
+        "slug": "series-api",
+        "title": "SERIES API",
+        "description": "API en FastAPI con PostgreSQL, psycopg2 y subida de imágenes con Cloudinary.",
+        "image": "https://private-user-images.githubusercontent.com/58778570/599790551-0968719f-86e3-488e-9e2d-2d0b5a49ec86.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtlI6ImtlZTUiLCJleHAiOjE3ODAyMDE5MzIsIm5iZiI6MTc4MDIwMTYzMiwicGF0aCI6Ii81ODc3ODU3MC81OTk3OTA1NTEtMDk2ODcxOWYtODZlMy00ODhlLTllMmQtMmQwYjVhNDllYzg2LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA1MzElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNTMxVDA0MjcxMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTVmMjk3ZTEzODVmNTA2YWU2NGIwNDNlMzI5ZTllNTc0NDAyNmY5ZDY4YzU5NjA4MzU5ZGM5MDc4NmMxYjc4NjMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRmdpZiJ9.1gyVXFR-j2mJaPcGYT-dURbzPqEMNEpRj0sTxHoc-C0",
+        "tech": ["FASTAPI", "POSTGRESQL", "CLOUDINARY"],
+        "status": "LIVE",
+        "url": "/projects/series-api",
+        "detail": {
+          "projectId": "007",
+          "systemStatus": "LIVE",
+          "terminalCommand": "cat SERIES_API.md",
+          "media": {
+            "imageId": "1x001_MEDIA",
+            "previewMode": "ACTIVE",
+            "alt": "Series API preview",
+            "videoUrl": null
+          },
+          "specs": {
+            "role": "Full-Stack Developer",
+            "stack": ["FastAPI", "PostgreSQL", "Cloudinary"],
+            "status": "STABLE",
+            "year": "2026",
+            "category": "FULLSTACK",
+            "scope": "ACADEMIC_PROJECT"
+          },
+          "features": [
+            {
+            "icon": "[+]",
+            "title": "ARQUITECTURA BACKEND ESCALABLE",
+            "description": "Diseño de una API REST modular con FastAPI siguiendo buenas prácticas de separación de responsabilidades, facilitando el mantenimiento y la escalabilidad del sistema."
+            },
+            {
+            "icon": "[+]",
+            "title": "GESTIÓN EFICIENTE DE DATOS",
+            "description": "Modelado y persistencia de información mediante PostgreSQL y psycopg2, optimizando consultas y garantizando la integridad de los datos."
+            },
+            {
+            "icon": "=>",
+            "title": "INTEGRACIÓN CON SERVICIOS EXTERNOS",
+            "description": "Implementación de almacenamiento y distribución de imágenes mediante Cloudinary, reduciendo la carga del servidor y mejorando la disponibilidad de recursos."
+            },
+            {
+            "icon": "=>",
+            "title": "API AUTODOCUMENTADA Y SEGURA",
+            "description": "Validación de esquemas con Pydantic y generación automática de documentación interactiva para facilitar el consumo e integración de la API."
+            }
+          ],
+          "liveUrl": "https://series-api-production.up.railway.app/",
+          "repositoryUrl": "https://github.com/angcoder-c/series-api"
+        }
       }
     ]
   },

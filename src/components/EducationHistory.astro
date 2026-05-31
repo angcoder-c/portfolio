@@ -8,8 +8,6 @@ interface Props {
 
 const { education } = Astro.props;
 
-const tagToneClasses = ['edu-tag-a', 'edu-tag-b', 'edu-tag-c'] as const;
-
 const statusStyles: Record<string, string> = {
   COMPLETED: 'edu-status-completed',
   IN_PROGRESS: 'edu-status-progress',
@@ -57,15 +55,17 @@ function getCertLinkLabel(url: string, index: number): string {
                   {item.degree}
                 </p>
 
-                <div class="flex flex-wrap gap-x-3 gap-y-1">
-                  {
-                    item.tags.map((tag, tagIndex) => (
-                      <span class:list={['text-[11px] font-bold sm:text-xs', tagToneClasses[tagIndex % tagToneClasses.length]]}>
-                        [ {tag} ]
-                      </span>
-                    ))
-                  }
-                </div>
+                {
+                  item.tags.length > 0 && (
+                    <div class="flex flex-wrap gap-1.5">
+                      {
+                        item.tags.map((tag) => (
+                          <span class="edu-tag">{tag}</span>
+                        ))
+                      }
+                    </div>
+                  )
+                }
 
                 {
                   item.certificationUrls && item.certificationUrls.length > 0 && (
@@ -117,6 +117,9 @@ function getCertLinkLabel(url: string, index: number): string {
     --edu-arrow: var(--secondary);
     --edu-title: var(--primary-soft);
     --edu-degree: #c8d8bf;
+    --edu-tag-text: #a3ad9c;
+    --edu-tag-border: rgba(0, 229, 255, 0.14);
+    --edu-tag-bg: rgba(15, 22, 15, 0.55);
     --edu-pipe: var(--secondary);
     --edu-id: var(--neutral);
     --edu-node: var(--secondary);
@@ -148,19 +151,19 @@ function getCertLinkLabel(url: string, index: number): string {
     background: linear-gradient(90deg, rgba(0, 229, 255, 0.06) 0%, transparent 60%), var(--surface-3);
   }
 
-  .education-zone :global(.edu-tag-a) {
-    color: var(--secondary);
-    text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+  .edu-tag {
+    border: 1px solid var(--edu-tag-border);
+    background: var(--edu-tag-bg);
+    padding: 0.1rem 0.45rem;
+    font-size: 10px;
+    line-height: 1.45;
+    color: var(--edu-tag-text);
+    transition: border-color 0.2s, color 0.2s;
   }
 
-  .education-zone :global(.edu-tag-b) {
-    color: var(--success);
-    text-shadow: 0 0 8px rgba(140, 255, 149, 0.28);
-  }
-
-  .education-zone :global(.edu-tag-c) {
-    color: var(--warning);
-    text-shadow: 0 0 8px rgba(255, 231, 161, 0.22);
+  .education-card:hover .edu-tag {
+    border-color: rgba(0, 229, 255, 0.24);
+    color: #b5c4ad;
   }
 
   .education-zone :global(.edu-status-completed) {

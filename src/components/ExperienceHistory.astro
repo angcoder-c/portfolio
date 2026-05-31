@@ -8,7 +8,6 @@ interface Props {
 
 const { experience } = Astro.props;
 
-const techToneClasses = ['exp-tech-a', 'exp-tech-b', 'exp-tech-c'] as const;
 ---
 
 <section id="experience" class="experience-zone">
@@ -51,15 +50,17 @@ const techToneClasses = ['exp-tech-a', 'exp-tech-b', 'exp-tech-c'] as const;
               }
             </ul>
 
-            <div class="flex flex-wrap gap-x-3 gap-y-1">
-              {
-                item.stack.map((tech, techIndex) => (
-                  <span class:list={['text-[11px] font-bold sm:text-xs', techToneClasses[techIndex % techToneClasses.length]]}>
-                    [ {tech} ]
-                  </span>
-                ))
-              }
-            </div>
+            {
+              item.stack.length > 0 && (
+                <div class="flex flex-wrap gap-1.5">
+                  {
+                    item.stack.map((tech) => (
+                      <span class="exp-tag">{tech}</span>
+                    ))
+                  }
+                </div>
+              )
+            }
           </li>
         ))
       }
@@ -75,6 +76,9 @@ const techToneClasses = ['exp-tech-a', 'exp-tech-b', 'exp-tech-c'] as const;
     --exp-title: var(--primary-soft);
     --exp-pipe: var(--secondary);
     --exp-highlight: #c8d8bf;
+    --exp-tag-text: #a3ad9c;
+    --exp-tag-border: rgba(53, 255, 90, 0.14);
+    --exp-tag-bg: rgba(15, 22, 15, 0.55);
     --exp-node: var(--primary);
     --exp-spine: rgba(0, 229, 255, 0.35);
     --exp-window-border: rgba(0, 229, 255, 0.4);
@@ -90,19 +94,19 @@ const techToneClasses = ['exp-tech-a', 'exp-tech-b', 'exp-tech-c'] as const;
     box-shadow: inset 0 0 40px var(--exp-window-glow);
   }
 
-  .experience-zone :global(.exp-tech-a) {
-    color: var(--secondary);
-    text-shadow: 0 0 8px rgba(0, 229, 255, 0.35);
+  .exp-tag {
+    border: 1px solid var(--exp-tag-border);
+    background: var(--exp-tag-bg);
+    padding: 0.1rem 0.45rem;
+    font-size: 10px;
+    line-height: 1.45;
+    color: var(--exp-tag-text);
+    transition: border-color 0.2s, color 0.2s;
   }
 
-  .experience-zone :global(.exp-tech-b) {
-    color: var(--success);
-    text-shadow: 0 0 8px rgba(140, 255, 149, 0.3);
-  }
-
-  .experience-zone :global(.exp-tech-c) {
-    color: var(--warning);
-    text-shadow: 0 0 8px rgba(255, 231, 161, 0.25);
+  .experience-commit:hover .exp-tag {
+    border-color: rgba(53, 255, 90, 0.24);
+    color: #b5c4ad;
   }
 
   .experience-node {
