@@ -618,22 +618,40 @@
   ],
   "gallery": [
     {
-      "src": "https://blocks.astratic.com/img/general-img-landscape.png",
+      "src": "https://raw.githubusercontent.com/angcoder-c/portfolio/refs/heads/main/public/gallery/cursor-meetup-2025.jpeg",
       "aspect": "landscape",
       "title": "Cursor Meetup Guatemala 2025",
       "alt": "Cursor Meetup Guatemala 2025"
     },
     {
-      "src": "https://blocks.astratic.com/img/general-img-portrait.png",
-      "aspect": "portrait",
-      "title": "Cafe Cursor Guatemala 2025",
-      "alt": "Cafe Cursor Guatemala 2025"
+      "src": "https://raw.githubusercontent.com/angcoder-c/portfolio/refs/heads/main/public/gallery/cursor-hackaton-2026.jpg",
+      "aspect": "landscape",
+      "title": "Cursor Hackathon Guatemala 2026",
+      "alt": "Cursor Hackathon Guatemala 2026"
     },
     {
-      "src": "https://blocks.astratic.com/img/general-img-square.png",
-      "aspect": "square",
+      "src": "https://raw.githubusercontent.com/angcoder-c/portfolio/refs/heads/main/public/gallery/equipo-icpc-2025.jpeg",
+      "aspect": "landscape",
+      "title": "Equipo ICPC 2025",
+      "alt": "Equipo ICPC 2025"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/angcoder-c/portfolio/refs/heads/main/public/gallery/final-nacional-icpc-2025.jpeg",
+      "aspect": "landscape",
       "title": "Final Nacional del ICPC 2025",
       "alt": "Final Nacional del ICPC 2025"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/angcoder-c/portfolio/refs/heads/main/public/gallery/finalistas-cursor-hackaton-2026.jpeg",
+      "aspect": "landscape",
+      "title": "Finalistas Cursor Hackathon 2026",
+      "alt": "Finalistas Cursor Hackathon 2026"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/angcoder-c/portfolio/refs/heads/main/public/gallery/inicio-icpc-2026.jpg",
+      "aspect": "landscape",
+      "title": "Inicio ICPC 2026",
+      "alt": "Inicio ICPC 2026"
     }
   ],
   "contact": {
