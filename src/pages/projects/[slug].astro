@@ -5,6 +5,7 @@ import ProjectMediaWindow from '../../components/project/ProjectMediaWindow.astr
 import ProjectDetailAnimations from '../../components/project/ProjectDetailAnimations';
 import { profile, getAllProjects, type Project } from '../../data';
 import { generateAsciiTitle } from '../../lib/asciiTitle';
+import '../../styles/globals.css';
 
 export function getStaticPaths() {
   return getAllProjects().map((project) => ({
@@ -30,7 +31,6 @@ const username = profile.email.split('@')[0] + '@portfolio';
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/src/styles/globals.css" />
     <meta name="viewport" content="width=device-width" />
     <title>{project.title} — PORTFOLIO_OS</title>
   </head>

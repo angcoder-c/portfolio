@@ -25,6 +25,7 @@ import {
   getChatbotPersona,
   isChatbotEnabled,
 } from '../data';
+import '../styles/globals.css';
 ---
 
 <html lang="en">
@@ -37,7 +38,6 @@ import {
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/src/styles/globals.css" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{profile.name} — {profile.role}</title>
