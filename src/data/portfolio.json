@@ -1,0 +1,497 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "locale": "es",
+    "lastUpdated": "2026-05-30"
+  },
+  "profile": {
+    "username": "angcoder@portfolio",
+    "email": "angcoder.c@gmail.com",
+    "name": "ANGEL CHAVEZ",
+    "role": "FULL-STACK DEVELOPER",
+    "location": "Ciudad de Guatemala, Guatemala",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/58778570?v=4"
+  },
+  "hero": {
+    "command": "$ system_status --overview",
+    "tagline": "Desarrollador Full Stack enfocado en aplicaciones web modernas, infraestructura Linux, bases de datos y despliegue de servicios en la nube."
+  },
+  "navigation": [
+    { "label": "~/about", "href": "#about" },
+    { "label": "~/experience", "href": "#experience" },
+    { "label": "~/projects", "href": "#projects" },
+    { "label": "~/education", "href": "#education" },
+    { "label": "~/skills", "href": "#skills" },
+    { "label": "~/events", "href": "#events" },
+    { "label": "~/gallery", "href": "#gallery" },
+    { "label": "~/contact", "href": "#contact" }
+  ],
+  "socials": [
+    {
+      "id": "github",
+      "label": "GITHUB",
+      "href": "https://github.com/angcoder-c",
+      "terminalLabel": "ls social/github"
+    },
+    {
+      "id": "linkedin",
+      "label": "LINKEDIN",
+      "href": "https://linkedin.com/in/angcoder",
+      "terminalLabel": "ls social/linkedin"
+    },
+    {
+      "id": "twitter",
+      "label": "TWITTER",
+      "href": "https://twitter.com/angcoder",
+      "terminalLabel": "ls social/twitter"
+    }
+  ],
+
+  "about": {
+    "command": "$ cat about.txt",
+    "text": "Soy estudiante de Ingeniería en Ciencias de la Computación y desarrollador Full Stack con experiencia en React, Angular, TypeScript, PostgreSQL y despliegue de aplicaciones en Google Cloud Platform. Me interesa el desarrollo web moderno, la administración de sistemas Linux, las bases de datos, las redes de computadoras y la construcción de herramientas que resuelvan problemas reales."
+  },
+  "experience": {
+    "windowId": "0x3C7_EXP",
+    "command": "$ ./experience --history",
+    "items": [
+      {
+        "id": "X01",
+        "period": "2026 - PRESENTE",
+        "title": "ODOO OPERATIONS",
+        "company": "OLIVE TECH",
+        "highlights": [
+          "Administración de infraestructura en la nube con GCP, para servicios de Odoo ERP.",
+          "Operaciones de mantenimiento y soporte de Odoo, asegurando alta disponibilidad y rendimiento."
+        ],
+        "stack": ["Google Cloud Platform", "Odoo", "SysAdmin"]
+      },
+      {
+        "id": "X02",
+        "period": "2023",
+        "title": "TÉCNICO REPARADOR DE RADIOS",
+        "company": "Corporación Radio Electrónica, S.A.",
+        "highlights": [
+          "Reparación y mantenimiento de equipos de radiofrecuencia para clientes corporativos.",
+          "Configuración ocasional de equipos de radiofrecuencia."
+        ],
+        "stack": ["Electrónica", "Reparación"]
+      }
+    ]
+  },
+  "projects": {
+    "command": "$ ls ./projects",
+    "items": [
+      {
+        "slug": "trello-angular-clone",
+        "title": "TRELLO_CLONE",
+        "description": "Clon funcional de Trello construido con Angular. Implementa tableros, listas, tarjetas, drag and drop, autenticación de usuarios y almacenamiento local en tiempo real.",
+        "image": "https://private-user-images.githubusercontent.com/58778570/599790551-0968719f-86e3-488e-9e2d-2d0b5a49ec86.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtlI6ImtlZTUiLCJleHAiOjE3ODAyMDE5MzIsIm5iZiI6MTc4MDIwMTYzMiwicGF0aCI6Ii81ODc3ODU3MC81OTk3OTA1NTEtMDk2ODcxOWYtODZlMy00ODhlLTllMmQtMmQwYjVhNDllYzg2LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA1MzElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNTMxVDA0MjcxMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTVmMjk3ZTEzODVmNTA2YWU2NGIwNDNlMzI5ZTllNTc0NDAyNmY5ZDY4YzU5NjA4MzU5ZGM5MDc4NmMxYjc4NjMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRmdpZiJ9.1gyVXFR-j2mJaPcGYT-dURbzPqEMNEpRj0sTxHoc-C0",
+        "tech": ["ANGULAR", "TAILWINDCSS", "TYPESCRIPT", "SIGNALS", "ANGULAR_CDK", "INDEXEDDB", "DRAG_AND_DROP", "DEXIE", "OAUTH2"],
+        "status": "STABLE",
+        "url": "/projects/trello-angular-clone",
+        "detail": {
+          "projectId": "808",
+          "terminalCommand": "cat TRELLO_ANGULAR_CLONE.md",
+          "media": {
+            "imageId": "1x003_MEDIA",
+            "previewMode": "ACTIVE",
+            "alt": "TRELLO ANGULAR CLONE preview render",
+            "videoUrl": null
+          },
+          "specs": {
+            "role": "Lead Developer",
+            "stack": ["Angular", "Tailwind CSS", "TypeScript", "Signals", "Angular CDK"],
+            "status": "DEPLOYED_STABLE",
+            "year": "2026",
+            "category": "FRONTEND",
+            "scope": "PERSONAL_PROJECT"
+          },
+          "features": [
+            {
+              "icon": "[+]",
+              "title": "GESTIÓN DE TABLEROS Y LISTAS",
+              "description": "Creación y administración de tableros personalizables con múltiples listas organizadas mediante una arquitectura basada en Angular Signals para actualizaciones reactivas y eficientes."
+            },
+            {
+              "icon": "[+]",
+              "title": "DRAG & DROP AVANZADO",
+              "description": "Reordenamiento intuitivo de listas y tarjetas utilizando Angular CDK Drag & Drop, permitiendo mover elementos entre columnas con actualizaciones instantáneas de estado."
+            },
+            {
+              "icon": "=>",
+              "title": "AUTENTICACIÓN DE USUARIOS",
+              "description": "Sistema de autenticación mediante OAuth2 con gestión segura de sesiones, protegiendo el acceso a los tableros y la información del usuario."
+            },
+            {
+              "icon": "=>",
+              "title": "PERSISTENCIA LOCAL OFFLINE",
+              "description": "Almacenamiento de datos en IndexedDB mediante Dexie, permitiendo conservar tableros, listas y tarjetas incluso sin conexión a internet."
+            }
+          ],
+          "liveUrl": "https://trello-angular-clone.vercel.app/",
+          "repositoryUrl": "https://github.com/angcoder-c/trello-angular-clone/"
+        }
+      },
+      {
+        "slug": "prompt-marketplace",
+        "title": "PROMPT_MARKETPLACE",
+        "description": "Marketplace para intercambio de prompts de IA con sistema de puntuación y transacciones por puntos.",
+        "image": "https://private-user-images.githubusercontent.com/58778570/599790551-0968719f-86e3-488e-9e2d-2d0b5a49ec86.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtlI6ImtlZTUiLCJleHAiOjE3ODAyMDE5MzIsIm5iZiI6MTc4MDIwMTYzMiwicGF0aCI6Ii81ODc3ODU3MC81OTk3OTA1NTEtMDk2ODcxOWYtODZlMy00ODhlLTllMmQtMmQwYjVhNDllYzg2LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA1MzElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNTMxVDA0MjcxMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTVmMjk3ZTEzODVmNTA2YWU2NGIwNDNlMzI5ZTllNTc0NDAyNmY5ZDY4YzU5NjA4MzU5ZGM5MDc4NmMxYjc4NjMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRmdpZiJ9.1gyVXFR-j2mJaPcGYT-dURbzPqEMNEpRj0sTxHoc-C0",
+        "tech": ["TANSTACK START", "LIBSQL", "NO-ORM", "SQL", "TAILWINDCSS", "ZUSTAND", "TYPESCRIPT", "BETTER_AUTH", "OAUTH2"],
+        "status": "LIVE",
+        "url": "/projects/prompt-marketplace",
+        "detail": {
+          "projectId": "412",
+          "systemStatus": "LIVE",
+          "terminalCommand": "cat PROMPT_MARKETPLACE.md",
+          "media": {
+            "imageId": "1x004_MEDIA",
+            "previewMode": "ACTIVE",
+            "alt": "PROMPT MARKETPLACE architecture diagram",
+            "videoUrl": null
+          },
+          "specs": {
+            "role": "Lead Developer",
+            "stack": ["Tailwind CSS", "TypeScript", "Docker","TanStack Start", "LibSQL"],
+            "status": "DEPLOYED_STABLE",
+            "year": "2026",
+            "category": "FULLSTACK",
+            "scope": "PERSONAL_PROJECT"
+          },
+          "features": [
+            {
+              "icon": "[+]",
+              "title": "ARQUITECTURA FULLSTACK TYPE-SAFE",
+              "description": "Aplicación desarrollada con TanStack Start, TypeScript y LibSQL, priorizando tipado estricto, rendimiento y mantenibilidad del código."
+            },
+            {
+              "icon": "[+]",
+              "title": "MOTOR DE INTERCAMBIO DE PROMPTS",
+              "description": "Implementación de un sistema de transacciones basado en puntos para la compra y distribución de prompts generados por la comunidad."
+            },
+            {
+              "icon": "=>",
+              "title": "CONSULTAS SQL OPTIMIZADAS",
+              "description": "LibSQL mediante SQL nativo y una capa de datos personalizada, eliminando la sobrecarga de un ORM tradicional."
+            },
+            {
+              "icon": "=>",
+              "title": "AUTENTICACIÓN MODERNA",
+              "description": "Integración de Better Auth y OAuth2 para gestionar sesiones seguras, proveedores externos y autorización de usuarios."
+            }
+          ],
+          "liveUrl": "https://prompt-marketplace-gamma.vercel.app/",
+          "repositoryUrl": "https://github.com/angcoder-c/prompt-marketplace"
+        }
+      },
+      {
+        "slug": "icestock",
+        "title": "ICESTOCK",
+        "description": "Aplicación web para inventario y ventas de una tienda: catálogo público, portales de administración y cajero, reportes y autenticación con Better Auth.",
+        "image": "https://private-user-images.githubusercontent.com/58778570/599790551-0968719f-86e3-488e-9e2d-2d0b5a49ec86.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtlI6ImtlZTUiLCJleHAiOjE3ODAyMDE5MzIsIm5iZiI6MTc4MDIwMTYzMiwicGF0aCI6Ii81ODc3ODU3MC81OTk3OTA1NTEtMDk2ODcxOWYtODZlMy00ODhlLTllMmQtMmQwYjVhNDllYzg2LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA1MzElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNTMxVDA0MjcxMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTVmMjk3ZTEzODVmNTA2YWU2NGIwNDNlMzI5ZTllNTc0NDAyNmY5ZDY4YzU5NjA4MzU5ZGM5MDc4NmMxYjc4NjMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRmdpZiJ9.1gyVXFR-j2mJaPcGYT-dURbzPqEMNEpRj0sTxHoc-C0",
+        "tech": ["TANSTACK START", "POSTGRESQL", "TAILWIND CSS", "ZUSTAND", "TYPESCRIPT", "BETTER_AUTH", "OAUTH2", "JEST"],
+        "status": "LIVE",
+        "url": "/projects/icestock",
+        "detail": {
+          "projectId": "002",
+          "systemStatus": "LIVE",
+          "terminalCommand": "cat ICESTOCK.md",
+          "media": {
+            "imageId": "1x001_MEDIA",
+            "previewMode": "ACTIVE",
+            "alt": "IceStock interface preview",
+            "videoUrl": null
+          },
+          "specs": {
+            "role": "Full-Stack Developer",
+            "stack": ["TanStack Start", "React", "Docker", "Tailwind", "TypeScript", "PostgreSQL", "Better Auth"],
+            "status": "DEPLOYED_STABLE",
+            "year": "2026",
+            "category": "FULLSTACK",
+            "scope": "ACADEMIC_PROJECT"
+          },
+          "features": [
+            {
+              "icon": "[+]",
+              "title": "GESTIÓN INTEGRAL DE INVENTARIO",
+              "description": "Administración de productos, categorías, proveedores y existencias con control de stock en tiempo real y actualización automática tras cada venta."
+            },
+            {
+              "icon": "[+]",
+              "title": "PORTALES POR ROL",
+              "description": "Interfaces especializadas para administradores, cajeros y clientes, con permisos diferenciados y control de acceso basado en roles."
+            },
+            {
+              "icon": "=>",
+              "title": "PUNTO DE VENTA (POS)",
+              "description": "Módulo de caja para registrar ventas, generar comprobantes y mantener sincronizado el inventario con las operaciones comerciales."
+            },
+            {
+              "icon": "=>",
+              "title": "REPORTES Y ANALÍTICAS",
+              "description": "Visualización de métricas de ventas, productos más vendidos, movimientos de inventario y estadísticas clave para la toma de decisiones."
+            }
+          ],
+          "liveUrl": "https://icestock.vercel.app",
+          "repositoryUrl": "https://github.com/angcoder-c/icestock"
+        }
+      },
+      {
+        "slug": "camelkey",
+        "title": "CAMELKEY",
+        "description": "Manejador de contraseñas CLI inspirado en KeePass, con almacenamiento localmente y una interfaz de terminal minimalista.",
+        "image": "https://private-user-images.githubusercontent.com/58778570/599790551-0968719f-86e3-488e-9e2d-2d0b5a49ec86.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtlI6ImtlZTUiLCJleHAiOjE3ODAyMDE5MzIsIm5iZiI6MTc4MDIwMTYzMiwicGF0aCI6Ii81ODc3ODU3MC81OTk3OTA1NTEtMDk2ODcxOWYtODZlMy00ODhlLTllMmQtMmQwYjVhNDllYzg2LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA1MzElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNTMxVDA0MjcxMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTVmMjk3ZTEzODVmNTA2YWU2NGIwNDNlMzI5ZTllNTc0NDAyNmY5ZDY4YzU5NjA4MzU5ZGM5MDc4NmMxYjc4NjMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRmdpZiJ9.1gyVXFR-j2mJaPcGYT-dURbzPqEMNEpRj0sTxHoc-C0",
+        "tech": ["NODE.JS", "CHALK", "CLI TABLE", "COMMANDER", "FIGLET", "SQLITE"],
+        "status": "WIP",
+        "url": "/projects/camelkey",
+        "detail": {
+          "projectId": "003",
+          "systemStatus": "WIP",
+          "terminalCommand": "cat CAMELKEY.md",
+          "media": {
+            "imageId": "1x001_MEDIA",
+            "previewMode": "ACTIVE",
+            "alt": "CamelKey interface preview",
+            "videoUrl": null
+          },
+          "specs": {
+            "role": "Backend Developer",
+            "stack": ["NODE.JS", "CHALK", "CLI TABLE", "COMMANDER", "FIGLET", "SQLITE"],
+            "status": "DEPLOYED_STABLE",
+            "year": "2026",
+            "category": "FULLSTACK",
+            "scope": "PERSONAL_PROJECT"
+          },
+          "features": [
+            {
+              "icon": "[+]",
+              "title": "ARQUITECTURA CLI MODULAR",
+              "description": "Aplicación desarrollada con Node.js y Commander, estructurada en módulos independientes para facilitar la extensión de comandos y funcionalidades."
+            },
+            {
+              "icon": "[+]",
+              "title": "PERSISTENCIA LIGERA CON SQLITE",
+              "description": "Sistema de almacenamiento basado en SQLite que ofrece una solución portable, eficiente y sin dependencias de servidores externos."
+            },
+            {
+              "icon": "=>",
+              "title": "EXPERIENCIA DE TERMINAL AVANZADA",
+              "description": "Uso de Chalk, CLI Table y Figlet para mejorar la legibilidad de la información, el feedback visual y la navegación dentro de la herramienta."
+            },
+            {
+              "icon": "=>",
+              "title": "GESTIÓN LOCAL DE SECRETOS",
+              "description": "Diseñado para administrar credenciales desde la línea de comandos, manteniendo los datos bajo control del usuario y reduciendo la superficie de exposición."
+            }
+          ],
+          "liveUrl": "https://www.npmjs.com/package/camelkey",
+          "repositoryUrl": "https://github.com/angcoder-c/camelkey"
+        }
+      },
+      {
+        "slug": "lisp-interpreter",
+        "title": "LISP INTERPRETER",
+        "description": "Interprete de lenguaje LISP desarrollado en Java 22, con capacidad para ejecutar código LISP y proporcionar una interfaz de terminal intuitiva.",
+        "image": "https://private-user-images.githubusercontent.com/58778570/599790551-0968719f-86e3-488e-9e2d-2d0b5a49ec86.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtlI6ImtlZTUiLCJleHAiOjE3ODAyMDE5MzIsIm5iZiI6MTc4MDIwMTYzMiwicGF0aCI6Ii81ODc3ODU3MC81OTk3OTA1NTEtMDk2ODcxOWYtODZlMy00ODhlLTllMmQtMmQwYjVhNDllYzg2LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA1MzElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNTMxVDA0MjcxMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTVmMjk3ZTEzODVmNTA2YWU2NGIwNDNlMzI5ZTllNTc0NDAyNmY5ZDY4YzU5NjA4MzU5ZGM5MDc4NmMxYjc4NjMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRmdpZiJ9.1gyVXFR-j2mJaPcGYT-dURbzPqEMNEpRj0sTxHoc-C0",
+        "tech": ["JEST", "APACHE MAVEN", "JUNIT", "ESTRUCTURAS DE DATOS"],
+        "status": "WIP",
+        "url": "/projects/lisp-interpreter",
+        "detail": {
+          "projectId": "004",
+          "systemStatus": "WIP",
+          "terminalCommand": "cat LISP_INTERPRETER.md",
+          "media": {
+            "imageId": "1x001_MEDIA",
+            "previewMode": "ACTIVE",
+            "alt": "Lisp Interpreter interface preview",
+            "videoUrl": null
+          },
+          "specs": {
+            "role": "Lead Developer",
+            "stack": ["JAVA 22", "JEST", "APACHE MAVEN", "JUNIT", "ESTRUCTURAS DE DATOS"],
+            "status": "STABLE",
+            "year": "2025",
+            "category": "BACKEND",
+            "scope": "ACADEMIC_PROJECT"
+          },
+          "features": [
+            {
+              "icon": "[+]",
+              "title": "DISEÑO DE LENGUAJES E INTÉRPRETES",
+              "description": "Desarrollo de un intérprete Lisp en Java 22 implementando las etapas de tokenización, parsing, representación de expresiones y evaluación."
+            },
+            {
+              "icon": "[+]",
+              "title": "MODELO DE DATOS JERÁRQUICO",
+              "description": "Representación del lenguaje mediante estructuras como listas, átomos, números, operadores y funciones, siguiendo los principios de los lenguajes simbólicos."
+            },
+            {
+              "icon": "=>",
+              "title": "ENTORNO DE EJECUCIÓN PERSONALIZADO",
+              "description": "Implementación de un sistema de scopes y resolución de símbolos para gestionar variables, funciones definidas por el usuario y operadores integrados."
+            },
+            {
+              "icon": "=>",
+              "title": "CALIDAD Y VALIDACIÓN",
+              "description": "Pruebas unitarias con JUnit y construcción automatizada con Maven para verificar el correcto funcionamiento de las características principales del intérprete."
+            }
+          ],
+          "liveUrl": null,
+          "repositoryUrl": "https://github.com/angcoder-c/LispInterpreter"
+        }
+      }
+    ]
+  },
+  "education": {
+    "command": "$ ./education --history",
+    "items": [
+      {
+        "id": "E01",
+        "institution": "UNIVERSIDAD DEL VALLE DE GUATEMALA - INGENIERÍA EN CIENCIAS DE LA COMPUTACIÓN",
+        "degree": "Ingeniería en ciencias de la computación",
+        "period": "2024 - 2028",
+        "status": "IN_PROGRESS",
+        "tags": ["Algoritmos", "Bases de Datos", "JavaScript", "Python", "TypeScript", "Java", "Estructuras de datos", "Paradigmas de programación", "Programación de bajo nivel", "Desarrollo web", "Desarrollo móvil", "Metodologías ágiles"]
+      },
+      {
+        "id": "E02",
+        "institution": "FUNDACION KINAL - PERITO EN ELECTRONICA Y DISPOSITIVOS DIGITALES",
+        "degree": "Perito en electrónica y dispositivos digitales, con orientación en programación de sistemas embebidos y redes de computadoras",
+        "period": "2020-2022",
+        "status": "COMPLETED",
+        "tags": ["Cisco Networking", "C++", "Redes de computadoras", "Sistemas embebidos", "Protocolos de comunicación"]
+      },
+      {
+        "id": "E03",
+        "institution": "CISCO NETWORKING ACADEMY - CCNAv7 Cursos de networking",
+        "degree": "Cursos de networking, incluyendo CCNA Routing and Switching, CCNA Security y CCNA Wireless.",
+        "period": "2022",
+        "certificationUrls": [
+          "https://www.credly.com/badges/4c00696f-d1d4-4f7f-bb4d-9e16d42e51e5/public_url",
+          "https://www.credly.com/badges/1e5c8b9c-8a3b-4d9e-9f0c-2a7b6d2e5f3a/public_url"
+        ],
+        "status": "CERTIFIED",
+        "tags": ["CCNAv7", "Networking", "Routing", "Switching", "Cisco"]
+      }
+    ]
+  },
+  "skills": {
+  "command": "$ ./skills --verbose",
+  "items": [
+      {
+        "id": "B01",
+        "name": "Frontend Development",
+        "level": 80,
+        "stack": [
+          "React",
+          "Next.js",
+          "Angular",
+          "TanStack Start",
+          "TypeScript",
+          "Tailwind CSS",
+          "Zustand",
+          "Jest",
+          "pnpm"
+        ]
+      },
+      {
+        "id": "B02",
+        "name": "Backend Development",
+        "level": 85,
+        "stack": [
+          "Node.js",
+          "Java",
+          "PostgreSQL",
+          "SQLite",
+          "REST APIs",
+          "Better Auth"
+        ]
+      },
+      {
+        "id": "B03",
+        "name": "Cloud and DevOps",
+        "level": 70,
+        "stack": [
+          "Linux",
+          "Docker",
+          "Google Cloud Platform",
+          "Nginx"
+        ]
+      },
+      {
+        "id": "B04",
+        "name": "Systems and Networking",
+        "level": 60,
+        "stack": [
+          "Cisco Networking",
+          "CCNA",
+          "QEMU",
+          "Virtualization",
+          "TCP/IP",
+          "System Administration"
+        ]
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": "EVT01",
+      "date": "2025-08-30",
+      "title": "Cursor Meetup Guatemala 2025",
+      "description": "Asistencia a la primera Conferencia de Cursor Community en Guatemala."
+    },
+    {
+      "id": "EVT02",
+      "date": "2025-12-13",
+      "title": "Cafe Cursor Guatemala 2025",
+      "description": "Participación en el evento navideño de la Cursor Community Guatemala, aprendiendo sobre diferentes técnicas de prompt engineering con el resto de la comunidad."
+    },
+    {
+      "id": "EVT03",
+      "date": "2025-11-22",
+      "title": "Final Nacional del ICPC 2025",
+      "description": "Participación en la Final Nacional del ICPC Guatemala 2025, representando a la Universidad del Valle de Guatemala."
+    },
+    {
+      "id": "EVT04",
+      "date": "2026-03-07",
+      "title": "Cursor Hackathon Guatemala 2026",
+      "description": "Participación en el Hackathon de la Cursor Community Guatemala 2026, desarrollando un proyecto usando AI generativa en equipo durante 7 horas."
+    }
+  ],
+  "gallery": [
+    {
+      "src": "https://blocks.astratic.com/img/general-img-landscape.png",
+      "aspect": "landscape",
+      "title": "Cursor Meetup Guatemala 2025",
+      "alt": "Cursor Meetup Guatemala 2025"
+    },
+    {
+      "src": "https://blocks.astratic.com/img/general-img-portrait.png",
+      "aspect": "portrait",
+      "title": "Cafe Cursor Guatemala 2025",
+      "alt": "Cafe Cursor Guatemala 2025"
+    },
+    {
+      "src": "https://blocks.astratic.com/img/general-img-square.png",
+      "aspect": "square",
+      "title": "Final Nacional del ICPC 2025",
+      "alt": "Final Nacional del ICPC 2025"
+    }
+  ],
+  "contact": {
+    "command": "$ ./contact --interactive",
+    "fields": [
+      { "label": "Ingresar nombre:", "type": "text", "name": "name" },
+      { "label": "Ingresar email:", "type": "email", "name": "email" },
+      { "label": "Ingresar mensaje:", "type": "textarea", "name": "message" }
+    ],
+    "submitLabel": ">> EJECUTAR TRANSMISIÓN",
+    "messages": {
+      "success": "> TRANSMISIÓN EXITOSA: Gracias por tu mensaje. Me pondré en contacto contigo pronto.",
+      "error": "> ERROR: TRANSMISIÓN FALLIDA: Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde o contáctame directamente a angcoder.c@gmail.com",
+      "sending": "> EJECUTANDO TRANSMISIÓN..."
+    }
+  }
+}
