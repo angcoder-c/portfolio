@@ -86,7 +86,7 @@
         "slug": "trello-angular-clone",
         "title": "TRELLO_CLONE",
         "description": "Clon funcional de Trello construido con Angular. Implementa tableros, listas, tarjetas, drag and drop, autenticación de usuarios y almacenamiento local en tiempo real.",
-        "image": "https://private-user-images.githubusercontent.com/58778570/599790551-0968719f-86e3-488e-9e2d-2d0b5a49ec86.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtlI6ImtlZTUiLCJleHAiOjE3ODAyMDE5MzIsIm5iZiI6MTc4MDIwMTYzMiwicGF0aCI6Ii81ODc3ODU3MC81OTk3OTA1NTEtMDk2ODcxOWYtODZlMy00ODhlLTllMmQtMmQwYjVhNDllYzg2LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA1MzElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNTMxVDA0MjcxMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTVmMjk3ZTEzODVmNTA2YWU2NGIwNDNlMzI5ZTllNTc0NDAyNmY5ZDY4YzU5NjA4MzU5ZGM5MDc4NmMxYjc4NjMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRmdpZiJ9.1gyVXFR-j2mJaPcGYT-dURbzPqEMNEpRj0sTxHoc-C0",
+        "image": "https://raw.githubusercontent.com/angcoder-c/trello-angular-clone/refs/heads/main/TrelloClone.gif",
         "tech": ["ANGULAR", "TAILWINDCSS", "TYPESCRIPT", "SIGNALS", "ANGULAR_CDK", "INDEXEDDB", "DRAG_AND_DROP", "DEXIE", "OAUTH2"],
         "status": "STABLE",
         "url": "/projects/trello-angular-clone",
@@ -97,7 +97,7 @@
             "imageId": "1x003_MEDIA",
             "previewMode": "ACTIVE",
             "alt": "TRELLO ANGULAR CLONE preview render",
-            "videoUrl": null
+            "videoUrl": "https://youtu.be/gO39FGQ95OU"
           },
           "specs": {
             "role": "Lead Developer",
@@ -137,7 +137,7 @@
         "slug": "prompt-marketplace",
         "title": "PROMPT_MARKETPLACE",
         "description": "Marketplace para intercambio de prompts de IA con sistema de puntuación y transacciones por puntos.",
-        "image": "https://private-user-images.githubusercontent.com/58778570/599790551-0968719f-86e3-488e-9e2d-2d0b5a49ec86.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtlI6ImtlZTUiLCJleHAiOjE3ODAyMDE5MzIsIm5iZiI6MTc4MDIwMTYzMiwicGF0aCI6Ii81ODc3ODU3MC81OTk3OTA1NTEtMDk2ODcxOWYtODZlMy00ODhlLTllMmQtMmQwYjVhNDllYzg2LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA1MzElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNTMxVDA0MjcxMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTVmMjk3ZTEzODVmNTA2YWU2NGIwNDNlMzI5ZTllNTc0NDAyNmY5ZDY4YzU5NjA4MzU5ZGM5MDc4NmMxYjc4NjMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRmdpZiJ9.1gyVXFR-j2mJaPcGYT-dURbzPqEMNEpRj0sTxHoc-C0",
+        "image": "https://raw.githubusercontent.com/angcoder-c/prompt-marketplace/refs/heads/main/PromptMarketplace.gif",
         "tech": ["TANSTACK START", "LIBSQL", "NO-ORM", "SQL", "TAILWINDCSS", "ZUSTAND", "TYPESCRIPT", "BETTER_AUTH", "OAUTH2"],
         "status": "LIVE",
         "url": "/projects/prompt-marketplace",
@@ -149,7 +149,7 @@
             "imageId": "1x004_MEDIA",
             "previewMode": "ACTIVE",
             "alt": "PROMPT MARKETPLACE architecture diagram",
-            "videoUrl": null
+            "videoUrl": "https://youtu.be/svecxKvzL4I"
           },
           "specs": {
             "role": "Lead Developer",
@@ -189,7 +189,7 @@
         "slug": "icestock",
         "title": "ICESTOCK",
         "description": "Aplicación web para inventario y ventas de una tienda: catálogo público, portales de administración y cajero, reportes y autenticación con Better Auth.",
-        "image": "https://private-user-images.githubusercontent.com/58778570/599790551-0968719f-86e3-488e-9e2d-2d0b5a49ec86.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtlI6ImtlZTUiLCJleHAiOjE3ODAyMDE5MzIsIm5iZiI6MTc4MDIwMTYzMiwicGF0aCI6Ii81ODc3ODU3MC81OTk3OTA1NTEtMDk2ODcxOWYtODZlMy00ODhlLTllMmQtMmQwYjVhNDllYzg2LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA1MzElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNTMxVDA0MjcxMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTVmMjk3ZTEzODVmNTA2YWU2NGIwNDNlMzI5ZTllNTc0NDAyNmY5ZDY4YzU5NjA4MzU5ZGM5MDc4NmMxYjc4NjMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRmdpZiJ9.1gyVXFR-j2mJaPcGYT-dURbzPqEMNEpRj0sTxHoc-C0",
+        "image": "https://raw.githubusercontent.com/angcoder-c/icestock/refs/heads/main/icestock.gif",
         "tech": ["TANSTACK START", "POSTGRESQL", "TAILWIND CSS", "ZUSTAND", "TYPESCRIPT", "BETTER_AUTH", "OAUTH2", "JEST"],
         "status": "LIVE",
         "url": "/projects/icestock",
@@ -201,7 +201,7 @@
             "imageId": "1x001_MEDIA",
             "previewMode": "ACTIVE",
             "alt": "IceStock interface preview",
-            "videoUrl": null
+            "videoUrl": "https://youtu.be/oc_IhZvi5JM"
           },
           "specs": {
             "role": "Full-Stack Developer",
@@ -241,7 +241,7 @@
         "slug": "camelkey",
         "title": "CAMELKEY",
         "description": "Manejador de contraseñas CLI inspirado en KeePass, con almacenamiento localmente y una interfaz de terminal minimalista.",
-        "image": "https://private-user-images.githubusercontent.com/58778570/599790551-0968719f-86e3-488e-9e2d-2d0b5a49ec86.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtlI6ImtlZTUiLCJleHAiOjE3ODAyMDE5MzIsIm5iZiI6MTc4MDIwMTYzMiwicGF0aCI6Ii81ODc3ODU3MC81OTk3OTA1NTEtMDk2ODcxOWYtODZlMy00ODhlLTllMmQtMmQwYjVhNDllYzg2LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA1MzElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNTMxVDA0MjcxMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTVmMjk3ZTEzODVmNTA2YWU2NGIwNDNlMzI5ZTllNTc0NDAyNmY5ZDY4YzU5NjA4MzU5ZGM5MDc4NmMxYjc4NjMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRmdpZiJ9.1gyVXFR-j2mJaPcGYT-dURbzPqEMNEpRj0sTxHoc-C0",
+        "image": "https://raw.githubusercontent.com/angcoder-c/camelkey/refs/heads/main/branding/main.png",
         "tech": ["NODE.JS", "CHALK", "CLI TABLE", "COMMANDER", "FIGLET", "SQLITE"],
         "status": "WIP",
         "url": "/projects/camelkey",
@@ -253,7 +253,7 @@
             "imageId": "1x001_MEDIA",
             "previewMode": "ACTIVE",
             "alt": "CamelKey interface preview",
-            "videoUrl": null
+            "videoUrl": "https://youtu.be/bt8YgSOwyMo"
           },
           "specs": {
             "role": "Backend Developer",
@@ -293,7 +293,7 @@
         "slug": "lisp-interpreter",
         "title": "LISP INTERPRETER",
         "description": "Interprete de lenguaje LISP desarrollado en Java 22, con capacidad para ejecutar código LISP y proporcionar una interfaz de terminal intuitiva.",
-        "image": "https://private-user-images.githubusercontent.com/58778570/599790551-0968719f-86e3-488e-9e2d-2d0b5a49ec86.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtlI6ImtlZTUiLCJleHAiOjE3ODAyMDE5MzIsIm5iZiI6MTc4MDIwMTYzMiwicGF0aCI6Ii81ODc3ODU3MC81OTk3OTA1NTEtMDk2ODcxOWYtODZlMy00ODhlLTllMmQtMmQwYjVhNDllYzg2LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA1MzElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNTMxVDA0MjcxMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTVmMjk3ZTEzODVmNTA2YWU2NGIwNDNlMzI5ZTllNTc0NDAyNmY5ZDY4YzU5NjA4MzU5ZGM5MDc4NmMxYjc4NjMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRmdpZiJ9.1gyVXFR-j2mJaPcGYT-dURbzPqEMNEpRj0sTxHoc-C0",
+        "image": "https://raw.githubusercontent.com/angcoder-c/LispInterpreter/refs/heads/main/LispInterpreter.gif",
         "tech": ["JEST", "APACHE MAVEN", "JUNIT", "ESTRUCTURAS DE DATOS"],
         "status": "WIP",
         "url": "/projects/lisp-interpreter",
@@ -305,7 +305,7 @@
             "imageId": "1x001_MEDIA",
             "previewMode": "ACTIVE",
             "alt": "Lisp Interpreter interface preview",
-            "videoUrl": null
+            "videoUrl": "https://youtu.be/rRaNTb0Z9qE"
           },
           "specs": {
             "role": "Lead Developer",
@@ -345,7 +345,7 @@
         "slug": "food-recomendation",
         "title": "FOOD RECOMENDATION SYSTEM",
         "description": "Este proyecto es una plataforma de recomendaciones de comida que permite a los usuarios explorar menús de diferentes restaurantes, dar 'like' a productos, y recibir recomendaciones personalizadas. Utiliza Next.js, Neo4j como base de datos.",
-        "image": "https://private-user-images.githubusercontent.com/58778570/599790551-0968719f-86e3-488e-9e2d-2d0b5a49ec86.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtlI6ImtlZTUiLCJleHAiOjE3ODAyMDE5MzIsIm5iZiI6MTc4MDIwMTYzMiwicGF0aCI6Ii81ODc3ODU3MC81OTk3OTA1NTEtMDk2ODcxOWYtODZlMy00ODhlLTllMmQtMmQwYjVhNDllYzg2LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA1MzElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNTMxVDA0MjcxMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTVmMjk3ZTEzODVmNTA2YWU2NGIwNDNlMzI5ZTllNTc0NDAyNmY5ZDY4YzU5NjA4MzU5ZGM5MDc4NmMxYjc4NjMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRmdpZiJ9.1gyVXFR-j2mJaPcGYT-dURbzPqEMNEpRj0sTxHoc-C0",
+        "image": "https://raw.githubusercontent.com/angcoder-c/food-recommendations-p2/refs/heads/main/food-recomendation.gif",
         "tech": ["NEXT.JS", "NEO4J", "SHADCN UI", "TAILWIND CSS", "TYPESCRIPT", "JEST"],
         "status": "LIVE",
         "url": "/projects/food-recomendation",
@@ -357,7 +357,7 @@
             "imageId": "1x001_MEDIA",
             "previewMode": "ACTIVE",
             "alt": "Food Recommendation System interface preview",
-            "videoUrl": null
+            "videoUrl": "https://youtu.be/P5qIQYbbSvg"
           },
           "specs": {
             "role": "Lead Developer",
@@ -397,7 +397,7 @@
         "slug": "series-app",
         "title": "SERIES APP",
         "description": "Aplicación full-stack para gestión de series. Backend construido con FastAPI y PostgreSQL, frontend con JavaScript Vanilla.",
-        "image": "https://private-user-images.githubusercontent.com/58778570/599790551-0968719f-86e3-488e-9e2d-2d0b5a49ec86.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtlI6ImtlZTUiLCJleHAiOjE3ODAyMDE5MzIsIm5iZiI6MTc4MDIwMTYzMiwicGF0aCI6Ii81ODc3ODU3MC81OTk3OTA1NTEtMDk2ODcxOWYtODZlMy00ODhlLTllMmQtMmQwYjVhNDllYzg2LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA1MzElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNTMxVDA0MjcxMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTVmMjk3ZTEzODVmNTA2YWU2NGIwNDNlMzI5ZTllNTc0NDAyNmY5ZDY4YzU5NjA4MzU5ZGM5MDc4NmMxYjc4NjMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRmdpZiJ9.1gyVXFR-j2mJaPcGYT-dURbzPqEMNEpRj0sTxHoc-C0",
+        "image": "https://raw.githubusercontent.com/angcoder-c/series-app/refs/heads/main/series-app.gif",
         "tech": ["NEXT.JS", "NEO4J", "SHADCN UI", "TAILWIND CSS", "TYPESCRIPT", "JEST"],
         "status": "LIVE",
         "url": "/projects/series-app",
@@ -409,7 +409,7 @@
             "imageId": "1x001_MEDIA",
             "previewMode": "ACTIVE",
             "alt": "Series App interface preview",
-            "videoUrl": null
+            "videoUrl": "https://youtu.be/kptGpZtyOlE"
           },
           "specs": {
             "role": "Full-Stack Developer",
@@ -449,7 +449,7 @@
         "slug": "series-api",
         "title": "SERIES API",
         "description": "API en FastAPI con PostgreSQL, psycopg2 y subida de imágenes con Cloudinary.",
-        "image": "https://private-user-images.githubusercontent.com/58778570/599790551-0968719f-86e3-488e-9e2d-2d0b5a49ec86.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtlI6ImtlZTUiLCJleHAiOjE3ODAyMDE5MzIsIm5iZiI6MTc4MDIwMTYzMiwicGF0aCI6Ii81ODc3ODU3MC81OTk3OTA1NTEtMDk2ODcxOWYtODZlMy00ODhlLTllMmQtMmQwYjVhNDllYzg2LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA1MzElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNTMxVDA0MjcxMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTVmMjk3ZTEzODVmNTA2YWU2NGIwNDNlMzI5ZTllNTc0NDAyNmY5ZDY4YzU5NjA4MzU5ZGM5MDc4NmMxYjc4NjMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRmdpZiJ9.1gyVXFR-j2mJaPcGYT-dURbzPqEMNEpRj0sTxHoc-C0",
+        "image": "https://raw.githubusercontent.com/angcoder-c/series-api/refs/heads/main/series-api.png",
         "tech": ["FASTAPI", "POSTGRESQL", "CLOUDINARY"],
         "status": "LIVE",
         "url": "/projects/series-api",
