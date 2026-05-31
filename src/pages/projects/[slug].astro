@@ -1,0 +1,167 @@
+---
+import ProjectOSNav from '../../components/project/ProjectOSNav.astro';
+import ProjectSidebar from '../../components/project/ProjectSidebar.astro';
+import ProjectMediaWindow from '../../components/project/ProjectMediaWindow.astro';
+import ProjectDetailAnimations from '../../components/project/ProjectDetailAnimations';
+import { profile, getAllProjects, type Project } from '../../data';
+import { generateAsciiTitle } from '../../lib/asciiTitle';
+
+export function getStaticPaths() {
+  return getAllProjects().map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props as { project: Project };
+const { detail } = project;
+const asciiTitle = generateAsciiTitle(project.title);
+
+const username = profile.email.split('@')[0] + '@portfolio';
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles/globals.css" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{project.title} — PORTFOLIO_OS</title>
+  </head>
+  <body class="min-h-screen bg-bg font-terminal text-sm text-text antialiased">
+    <div
+      class="crt-overlay pointer-events-none fixed inset-0 z-50 bg-[repeating-linear-gradient(0deg,rgba(0,0,0,0.12)_0px,rgba(0,0,0,0.12)_1px,transparent_1px,transparent_3px)]"
+    >
+    </div>
+    <div
+      class="crt-vignette pointer-events-none fixed inset-0 z-40 bg-[radial-gradient(ellipse_at_center,transparent_60%,rgba(0,0,0,0.55)_100%)]"
+    >
+    </div>
+
+    <div data-project-shell class="relative z-10 flex min-h-screen flex-col">
+      <ProjectOSNav active="projects" />
+
+      <div class="flex flex-1 flex-col md:flex-row">
+        <ProjectSidebar
+          projectId={detail.projectId}
+          status={detail.systemStatus}
+          liveUrl={detail.liveUrl}
+          repositoryUrl={detail.repositoryUrl}
+        />
+
+        <main class="min-w-0 flex-1 overflow-x-hidden p-4 sm:p-6 lg:p-8">
+          <p class="mb-4 overflow-x-auto text-xs text-text-muted sm:text-sm">
+            <span class="text-primary">{username}:</span>
+            <span class="text-text-muted"> ~/projects$ </span>
+            <span data-terminal-prompt class="whitespace-nowrap">{detail.terminalCommand}</span>
+          </p>
+
+          <pre
+            class="mb-6 overflow-x-auto text-[7px] leading-tight text-primary drop-shadow-[0_0_8px_rgba(53,255,90,0.3)] sm:text-[10px] md:text-xs"
+            aria-label={project.title}
+          >
+            {
+              asciiTitle.map((line) => (
+                <code data-ascii-line class="block whitespace-pre">{line}</code>
+              ))
+            }
+          </pre>
+
+          <div data-media-window class="mb-6">
+            <ProjectMediaWindow
+              imageId={detail.media.imageId}
+              previewMode={detail.media.previewMode}
+              alt={detail.media.alt}
+              title={project.title}
+              imageUrl={project.image}
+              videoUrl={detail.media.videoUrl}
+            />
+          </div>
+
+          <div class="mb-6 grid grid-cols-1 gap-4 lg:grid-cols-2">
+            <section id="specs" data-spec-panel class="border border-border bg-surface-2">
+              <header class="border-b border-border px-3 py-1.5 text-[10px] font-bold tracking-wider text-text-muted">
+                SPEC_SHEET
+              </header>
+              <dl class="divide-y divide-border/30 text-xs">
+                <div class="flex flex-col gap-1 px-4 py-2.5 sm:flex-row sm:justify-between sm:gap-4">
+                  <dt class="text-text-muted">Role</dt>
+                  <dd class="font-bold text-text sm:text-right">{detail.specs.role}</dd>
+                </div>
+                <div class="flex flex-col gap-1 px-4 py-2.5 sm:flex-row sm:justify-between sm:gap-4">
+                  <dt class="shrink-0 text-text-muted">Stack</dt>
+                  <dd class="break-words font-bold text-primary sm:max-w-[65%] sm:text-right">
+                    {detail.specs.stack.join(' / ')}
+                  </dd>
+                </div>
+                <div class="flex flex-col gap-1 px-4 py-2.5 sm:flex-row sm:justify-between sm:gap-4">
+                  <dt class="text-text-muted">Status</dt>
+                  <dd class="font-bold text-success sm:text-right">{detail.specs.status}</dd>
+                </div>
+                <div class="flex flex-col gap-1 px-4 py-2.5 sm:flex-row sm:justify-between sm:gap-4">
+                  <dt class="text-text-muted">Year</dt>
+                  <dd class="font-bold text-text sm:text-right">{detail.specs.year}</dd>
+                </div>
+                <div class="flex flex-col gap-1 px-4 py-2.5 sm:flex-row sm:justify-between sm:gap-4">
+                  <dt class="text-text-muted">Category</dt>
+                  <dd class="font-bold text-text sm:text-right">{detail.specs.category}</dd>
+                </div>
+                <div class="flex flex-col gap-1 px-4 py-2.5 sm:flex-row sm:justify-between sm:gap-4">
+                  <dt class="text-text-muted">Scope</dt>
+                  <dd class="font-bold text-text sm:text-right">{detail.specs.scope}</dd>
+                </div>
+              </dl>
+            </section>
+
+            <section id="description" data-spec-panel class="border border-border bg-surface-2">
+              <header class="border-b border-border px-3 py-1.5 text-[10px] font-bold tracking-wider text-text-muted">
+                PROJECT_OVERVIEW
+              </header>
+              <div class="px-4 py-3">
+                <p data-description-text class="text-[11px] leading-relaxed text-text-muted sm:text-xs">
+                  {project.description}
+                </p>
+              </div>
+            </section>
+          </div>
+
+          <section id="features" class="mb-8 border border-border bg-surface-2">
+            <header class="border-b border-border px-3 py-1.5 text-[10px] font-bold tracking-wider text-text-muted">
+              CORE_FEATURES
+            </header>
+            <div class="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2">
+              {
+                detail.features.map((feature) => (
+                  <article data-feature-item class="border border-border/50 bg-bg/50 p-3">
+                    <h3 class="mb-1.5 text-xs font-bold text-primary">
+                      <span class="text-text-muted">{feature.icon}</span>
+                      {' '}{feature.title}
+                    </h3>
+                    <p class="text-[11px] leading-relaxed text-text-muted">
+                      {feature.description}
+                    </p>
+                  </article>
+                ))
+              }
+            </div>
+          </section>
+
+          <p class="overflow-x-auto text-xs text-text-muted">
+            <span class="text-primary">{username}:</span>
+            <span> ~/projects$ </span>
+            <a href="/#projects" class="text-text no-underline transition-colors hover:text-primary">cd ..</a>
+            <span class="cursor ml-0.5 inline-block h-3.5 w-2 align-text-bottom bg-primary"></span>
+          </p>
+        </main>
+      </div>
+    </div>
+
+    <ProjectDetailAnimations client:load />
+  </body>
+</html>

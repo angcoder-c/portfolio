@@ -1,0 +1,88 @@
+---
+import TerminalIcon from '../../icons/terminal.svg';
+import { profile } from '../../data';
+import type { MobileNavConfig } from '../../scripts/mobileNav';
+
+interface Props {
+  active?: 'root' | 'projects' | 'specs';
+}
+
+const { active = 'projects' } = Astro.props;
+
+const links = [
+  { id: 'projects', label: 'projects', href: '/projects' },
+  { id: 'specs', label: 'specs', href: '#specs' },
+] as const;
+
+const mobileNavConfig: MobileNavConfig = {
+  toggleId: 'project-nav-toggle',
+  menuId: 'project-nav-menu',
+  linkSelector: '[data-project-nav-link]',
+};
+---
+
+<header class="border-b border-border bg-surface">
+  <div class="flex items-center justify-between gap-3 px-4 py-3 font-terminal text-sm font-bold">
+    <a
+      href="/"
+      class="min-w-0 truncate text-sm text-success no-underline transition-colors hover:text-primary-soft sm:text-base"
+    >
+      {profile.username}:~
+    </a>
+
+    <button
+      type="button"
+      id="project-nav-toggle"
+      class="flex shrink-0 items-center justify-center border border-border p-2 text-primary transition-colors hover:border-primary hover:bg-surface-2 md:hidden"
+      aria-expanded="false"
+      aria-controls="project-nav-menu"
+      aria-label="Abrir menú del proyecto"
+    >
+      <TerminalIcon class="h-5 w-5" />
+    </button>
+
+    <nav class="hidden items-center gap-4 md:flex lg:gap-6">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              'whitespace-nowrap no-underline transition-colors',
+              active === link.id
+                ? 'text-primary underline underline-offset-4 decoration-primary'
+                : 'text-neutral hover:text-primary',
+            ]}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+
+  <nav
+    id="project-nav-menu"
+    class="hidden flex-col gap-1 border-t border-border px-4 py-3 md:hidden"
+  >
+    {
+      links.map((link) => (
+        <a
+          href={link.href}
+          class:list={[
+            'py-2 text-sm no-underline transition-colors',
+            active === link.id ? 'text-primary' : 'text-neutral hover:text-primary',
+          ]}
+          data-project-nav-link
+        >
+          {link.label}
+        </a>
+      ))
+    }
+  </nav>
+</header>
+
+<script define:vars={{ mobileNavConfig }}>
+  import { initMobileNav } from '../../scripts/mobileNav.ts';
+
+  initMobileNav(mobileNavConfig);
+</script>

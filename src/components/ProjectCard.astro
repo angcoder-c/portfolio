@@ -1,0 +1,73 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  tech: string[];
+  status: string;
+  url?: string;
+}
+
+const { title, description, image, tech, status, url = '#' } = Astro.props;
+
+const statusStyles: Record<string, string> = {
+  STABLE: 'border-success/40 bg-success/10 text-success',
+  LIVE: 'border-primary/40 bg-primary/10 text-primary',
+  WIP: 'border-warning/40 bg-warning/10 text-warning',
+  ARCHIVED: 'border-neutral/40 bg-neutral/10 text-neutral',
+};
+const statusClass = statusStyles[status] ?? 'border-border bg-surface-3 text-text-muted';
+---
+
+<article
+  data-project-card
+  class="group flex flex-col overflow-hidden border border-border bg-surface-2 transition-colors hover:border-primary/40 hover:bg-surface-3"
+>
+  <div class="relative aspect-video overflow-hidden border-b border-border bg-bg">
+    <img
+      src={image}
+      alt={`Preview de ${title}`}
+      class="size-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+      loading="lazy"
+      decoding="async"
+    />
+    <div
+      class="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(0deg,rgba(0,0,0,0.15)_0px,rgba(0,0,0,0.15)_1px,transparent_1px,transparent_3px)] opacity-30"
+      aria-hidden="true"
+    />
+    <span
+      class={`absolute right-2 top-2 border px-2 py-0.5 text-[10px] font-bold tracking-wider backdrop-blur-sm ${statusClass}`}
+    >
+      {status}
+    </span>
+  </div>
+
+  <div class="flex flex-1 flex-col p-4">
+    <h3 class="mb-2 font-bold text-primary transition-all group-hover:drop-shadow-[0_0_6px_rgba(53,255,90,0.35)]">
+      {title}
+    </h3>
+
+    <p class="mb-4 flex-1 text-xs leading-relaxed text-text-muted">
+      {description}
+    </p>
+
+    <div class="mb-4 flex flex-wrap gap-1.5">
+      {
+        tech.map((tag) => (
+          <span class="border border-border bg-bg px-2 py-0.5 text-[10px] text-text-muted">
+            {tag}
+          </span>
+        ))
+      }
+    </div>
+
+    <a
+      href={url}
+      class="inline-flex items-center gap-1 text-xs font-bold text-primary no-underline transition-all hover:gap-2 hover:text-primary-soft"
+      aria-label={`Ver ${title}`}
+    >
+      >> OPEN_PROJECT
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</article>

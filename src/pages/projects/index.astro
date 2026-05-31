@@ -1,0 +1,41 @@
+---
+import Navbar from '../../components/Navbar.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { projects } from '../../data';
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles/globals.css" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Projects — PORTFOLIO_OS</title>
+  </head>
+  <body class="min-h-screen bg-bg font-terminal text-sm text-text antialiased">
+    <Navbar />
+    <main class="mx-auto max-w-5xl px-4 py-6 sm:py-8">
+      <p class="mb-6 text-sm font-bold text-primary sm:text-base">$ ls ./projects</p>
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          projects.items.map((project) => (
+            <ProjectCard
+              title={project.title}
+              description={project.description}
+              image={project.image}
+              tech={project.tech}
+              status={project.status}
+              url={project.url}
+            />
+          ))
+        }
+      </div>
+    </main>
+  </body>
+</html>

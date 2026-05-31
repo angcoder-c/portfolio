@@ -1,0 +1,97 @@
+---
+import { hasVideoUrl, resolveVideoPreview } from '../../lib/projectMedia';
+
+interface Props {
+  imageId: string;
+  previewMode: string;
+  alt: string;
+  title: string;
+  imageUrl: string;
+  videoUrl?: string | null;
+}
+
+const { imageId, previewMode, alt, title, imageUrl, videoUrl = null } = Astro.props;
+
+const showVideo = hasVideoUrl(videoUrl);
+const videoPreview = showVideo ? resolveVideoPreview(videoUrl) : null;
+const mediaLabel = showVideo ? 'VIDEO_ID' : 'IMAGE_ID';
+const previewLabel = showVideo ? 'VIDEO_STREAM' : previewMode;
+---
+
+<div id="media" class="border border-border bg-surface-2">
+  <div class="flex items-center justify-between border-b border-border px-3 py-1.5 text-[10px] text-text-muted">
+    <span>#{mediaLabel}: {imageId}</span>
+    <div class="flex gap-1.5">
+      <span class="inline-block h-2.5 w-2.5 border border-border bg-surface-3"></span>
+      <span class="inline-block h-2.5 w-2.5 border border-border bg-surface-3"></span>
+      <span class="inline-block h-2.5 w-2.5 border border-primary/50 bg-primary/20"></span>
+    </div>
+  </div>
+
+  <div class="relative aspect-video overflow-hidden bg-bg">
+    {
+      showVideo && videoPreview?.kind === 'embed' ? (
+        <iframe
+          src={videoPreview.src}
+          title={alt}
+          class="size-full border-0"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        />
+      ) : showVideo && videoPreview?.kind === 'file' ? (
+        <video
+          src={videoPreview.src}
+          class="size-full object-cover"
+          controls
+          playsinline
+          preload="metadata"
+          aria-label={alt}
+        >
+          <track kind="captions" />
+        </video>
+      ) : imageUrl ? (
+        <>
+          <img
+            src={imageUrl}
+            alt={alt}
+            class="size-full object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+          <div
+            class="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(0deg,rgba(0,0,0,0.12)_0px,rgba(0,0,0,0.12)_1px,transparent_1px,transparent_3px)] opacity-25"
+            aria-hidden="true"
+          />
+        </>
+      ) : (
+        <div class="flex size-full items-center justify-center p-3 sm:p-6">
+          <svg
+            class="h-full w-full max-h-48 text-primary opacity-90 drop-shadow-[0_0_12px_rgba(53,255,90,0.25)] sm:max-h-64"
+            viewBox="0 0 400 300"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label={alt}
+          >
+            <defs>
+              <linearGradient id="mesh-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="currentColor" stop-opacity="0.15" />
+                <stop offset="50%" stop-color="currentColor" stop-opacity="0.4" />
+                <stop offset="100%" stop-color="currentColor" stop-opacity="0.1" />
+              </linearGradient>
+            </defs>
+            <rect width="400" height="300" fill="url(#mesh-grad)" />
+            <text x="200" y="280" text-anchor="middle" fill="currentColor" opacity="0.3" font-size="10" font-family="monospace">
+              {title}
+            </text>
+          </svg>
+        </div>
+      )
+    }
+
+    <span class="absolute bottom-3 left-3 border border-border bg-bg/80 px-2 py-0.5 text-[10px] text-text-muted backdrop-blur-sm">
+      [ PREVIEW_MODE: {previewLabel} ]
+    </span>
+  </div>
+</div>

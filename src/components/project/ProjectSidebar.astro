@@ -1,0 +1,82 @@
+---
+import TerminalIcon from '../../icons/terminal.svg';
+import FolderIcon from '../../icons/folder.svg';
+import SettingsIcon from '../../icons/settings.svg';
+import ArrowIcon from '../../icons/arrow_forward_icon.svg';
+
+interface Props {
+  projectId: string;
+  status: string;
+  liveUrl?: string | null;
+  repositoryUrl?: string | null;
+}
+
+const { projectId, status, liveUrl, repositoryUrl } = Astro.props;
+
+const hasLive = Boolean(liveUrl);
+const hasRepo = Boolean(repositoryUrl);
+
+const baseItem =
+  'flex shrink-0 items-center gap-2 px-3 py-2.5 text-xs font-bold no-underline transition-colors md:px-4';
+const activeItem = 'text-primary hover:bg-surface-2 hover:text-primary-soft';
+const disabledItem =
+  'cursor-not-allowed text-neutral/50 pointer-events-none opacity-50 [&_path]:fill-neutral/50';
+---
+
+<aside
+  class="w-full shrink-0 border-b border-border bg-surface bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(53,255,90,0.03)_2px,rgba(53,255,90,0.03)_4px)] md:w-52 md:border-r md:border-b-0"
+>
+
+  <nav class="flex overflow-x-auto py-2 md:flex-col md:overflow-visible">
+    {
+      hasLive ? (
+        <a
+          href={liveUrl!}
+          target="_blank"
+          rel="noopener noreferrer"
+          class:list={[baseItem, activeItem]}
+        >
+          <TerminalIcon />
+          LIVE
+        </a>
+      ) : (
+        <span class:list={[baseItem, disabledItem]} aria-disabled="true">
+          <TerminalIcon />
+          LIVE
+        </span>
+      )
+    }
+
+    {
+      hasRepo ? (
+        <a
+          href={repositoryUrl!}
+          target="_blank"
+          rel="noopener noreferrer"
+          class:list={[baseItem, activeItem]}
+        >
+          <FolderIcon />
+          REPOSITORIO
+        </a>
+      ) : (
+        <span class:list={[baseItem, disabledItem]} aria-disabled="true">
+          <FolderIcon />
+          REPOSITORIO
+        </span>
+      )
+    }
+
+    <a href="#specs" class:list={[baseItem, activeItem]}>
+      <SettingsIcon />
+      CONFIG
+    </a>
+
+    <a
+      href="/#projects"
+      class:list={[baseItem, 'text-secondary hover:bg-surface-2 hover:text-secondary']}
+    >
+      <ArrowIcon />
+      EXIT
+    </a>
+  </nav>
+</aside>
