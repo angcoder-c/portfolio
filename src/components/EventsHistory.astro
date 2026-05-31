@@ -1,0 +1,111 @@
+---
+import TerminalWindow from './TerminalWindow.astro';
+import type { EventItem } from '../data/types';
+
+interface Props {
+  events: EventItem[];
+  command?: string;
+}
+
+const { events, command = '$ ./events --log' } = Astro.props;
+
+const sortedEvents = [...events].sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+);
+
+function formatEventDate(date: string): string {
+  return new Date(`${date}T12:00:00`).toLocaleDateString('es-GT', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+}
+---
+
+<section id="events" class="events-zone">
+  <TerminalWindow windowId="0xEVT_LOG">
+    <p class="mb-6 font-bold text-[var(--evt-command)]" data-cmd>{command}</p>
+
+    <ol class="relative m-0 list-none space-y-4 p-0">
+      {
+        sortedEvents.map((event, index) => (
+          <li data-event-entry class="relative pl-7">
+            <span class="event-node absolute left-0 top-5 size-2 rounded-full" aria-hidden="true" />
+            {
+              index < sortedEvents.length - 1 && (
+                <span class="event-spine absolute left-[3px] top-7 bottom-[-1rem] w-px" aria-hidden="true" />
+              )
+            }
+
+            <article class="event-card flex flex-col gap-2 border p-4 sm:flex-row sm:items-start sm:justify-between">
+              <div class="min-w-0 flex-1">
+                <header class="mb-1 text-xs sm:text-sm">
+                  <span class="font-bold text-[var(--evt-date)]">[ {formatEventDate(event.date)} ]</span>
+                  <span class="mx-2 text-[var(--evt-arrow)]">-&gt;</span>
+                  <span class="font-extrabold tracking-wide text-[var(--evt-title)]">{event.title}</span>
+                </header>
+
+                <p class="text-[11px] leading-relaxed text-[var(--evt-desc)] sm:text-xs">
+                  <span class="mr-1 text-[var(--evt-pipe)]">|</span>
+                  {event.description}
+                </p>
+              </div>
+
+              <span class="shrink-0 text-[10px] font-bold tracking-wider text-[var(--evt-id)]">{event.id}</span>
+            </article>
+          </li>
+        ))
+      }
+    </ol>
+  </TerminalWindow>
+</section>
+
+<style>
+  .events-zone {
+    --evt-command: var(--primary);
+    --evt-date: var(--warning);
+    --evt-arrow: var(--secondary);
+    --evt-title: var(--primary-soft);
+    --evt-desc: #c8d8bf;
+    --evt-pipe: var(--secondary);
+    --evt-id: var(--neutral);
+    --evt-node: var(--warning);
+    --evt-spine: rgba(255, 231, 161, 0.35);
+    --evt-window-border: rgba(255, 231, 161, 0.35);
+    --evt-card-border: rgba(255, 231, 161, 0.22);
+    --evt-card-bg: rgba(255, 231, 161, 0.03);
+  }
+
+  .events-zone :global(.events-window) {
+    border-color: var(--evt-window-border);
+    background:
+      linear-gradient(135deg, rgba(255, 231, 161, 0.05) 0%, transparent 45%),
+      var(--surface);
+    box-shadow: inset 0 0 40px rgba(255, 231, 161, 0.03);
+  }
+
+  .event-card {
+    border-color: var(--evt-card-border);
+    background: linear-gradient(90deg, var(--evt-card-bg) 0%, transparent 55%), var(--surface-2);
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .event-card:hover {
+    border-color: rgba(255, 231, 161, 0.45);
+    background: linear-gradient(90deg, rgba(255, 231, 161, 0.06) 0%, transparent 60%), var(--surface-3);
+  }
+
+  .event-node {
+    background: var(--evt-node);
+    box-shadow: 0 0 8px rgba(255, 231, 161, 0.45);
+  }
+
+  .event-spine {
+    background: linear-gradient(
+      180deg,
+      var(--evt-spine) 0%,
+      rgba(255, 231, 161, 0.15) 50%,
+      transparent 100%
+    );
+  }
+</style>

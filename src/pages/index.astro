@@ -1,17 +1,122 @@
 ---
-
+import Navbar from '../components/Navbar.astro';
+import HeroSection from '../components/HeroSection.astro';
+import HeroPlanetAnimations from '../components/HeroPlanetAnimations';
+import TerminalWindow from '../components/TerminalWindow.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import EducationHistory from '../components/EducationHistory.astro';
+import ExperienceHistory from '../components/ExperienceHistory.astro';
+import SkillsSection from '../components/SkillsSection.astro';
+import EventsHistory from '../components/EventsHistory.astro';
+import GalleryGrid from '../components/GalleryGrid.astro';
+import ContactForm from '../components/ContactForm';
+import PortfolioAnimations from '../components/PortfolioAnimations';
+import {
+  profile,
+  about,
+  experience,
+  projects,
+  education,
+  skills,
+  events,
+  gallery,
+  contact,
+} from '../data';
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles/globals.css" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{profile.name} — {profile.role}</title>
+  </head>
+  <body class="min-h-screen bg-bg font-terminal text-sm text-text antialiased">
+    <div
+      class="crt-overlay pointer-events-none fixed inset-0 z-9999 bg-[repeating-linear-gradient(0deg,rgba(0,0,0,0.12)_0px,rgba(0,0,0,0.12)_1px,transparent_1px,transparent_3px)]"
+    >
+    </div>
+    <div
+      class="crt-vignette pointer-events-none fixed inset-0 z-9998 bg-[radial-gradient(ellipse_at_center,transparent_60%,rgba(0,0,0,0.55)_100%)]"
+    >
+    </div>
+
+    <Navbar />
+
+    <main class="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-6">
+
+      <HeroSection />
+
+      <!-- ABOUT -->
+      <div id="about" class="grid grid-cols-1 gap-6 md:grid-cols-[1fr_2fr]">
+        <div class="flex min-h-[200px] items-center justify-center" data-portrait>
+          <img
+            src={profile.avatarUrl}
+            alt={`Retrato de ${profile.name}`}
+            class="aspect-square  w-full border border-primary/30 object-cover opacity-90 drop-shadow-[0_0_6px_rgba(53,255,90,0.25)] transition-all hover:opacity-100"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+
+        <TerminalWindow windowId={about.bioWindowId ?? '0x982_EXT'}>
+          <p class="mb-4 font-bold text-primary" data-cmd>{about.command}</p>
+          <p class="mb-4 leading-relaxed text-text-muted">{about.text}</p>
+          <p class="text-text-muted italic">// EOF: end of file reached.</p>
+        </TerminalWindow>
+      </div>
+
+      <ExperienceHistory experience={experience} />
+
+      <!-- PROJECTS -->
+      <div id="projects">
+        <TerminalWindow windowId={projects.windowId ?? '0x861_LIST'}>
+          <p class="mb-6 font-bold text-primary" data-cmd>{projects.command}</p>
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {
+              projects.items.map((project) => (
+                <ProjectCard
+                  title={project.title}
+                  description={project.description}
+                  image={project.image}
+                  tech={project.tech}
+                  status={project.status}
+                  url={project.url}
+                />
+              ))
+            }
+          </div>
+        </TerminalWindow>
+      </div>
+
+      <!-- EDUCATION -->
+      <EducationHistory education={education} />
+
+      <SkillsSection skills={skills} />
+
+      <EventsHistory events={events} />
+
+      <GalleryGrid images={gallery} />
+
+      <!-- CONTACT -->
+      <div id="contact">
+        <TerminalWindow windowId={contact.windowId ?? '0x0E5_COM'}>
+          <ContactForm client:load contact={contact} />
+        </TerminalWindow>
+      </div>
+
+    </main>
+
+    <PortfolioAnimations client:load />
+    <HeroPlanetAnimations client:load />
+  </body>
 </html>

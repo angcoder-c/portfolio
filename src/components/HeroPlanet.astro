@@ -1,0 +1,131 @@
+---
+const uid = 'hero-planet';
+const gradId = `planetGradient-${uid}`;
+const glowId = `glow-${uid}`;
+
+// Ring plane tilt: left side higher (~25°), Saturn-like frontal view
+const ringTilt = 25;
+const cx = 150;
+const cy = 150;
+
+const rings = [
+  { rx: 120, ry: 32, opacity: 0.2 },
+  { rx: 90, ry: 24, opacity: 0.15 },
+  { rx: 60, ry: 16, opacity: 0.1 },
+];
+---
+
+<div
+  data-hero-planet
+  class="relative hidden w-full max-w-xs justify-center md:flex md:max-w-sm lg:ml-auto lg:justify-end"
+>
+  <div
+    data-planet-wrap
+    class="relative aspect-square w-72 md:w-80"
+    style="transform: none;"
+  >
+    <svg
+      viewBox="0 0 300 300"
+      class="block h-full w-full"
+      preserveAspectRatio="xMidYMid meet"
+      style="filter: drop-shadow(0 0 30px rgba(53,255,90,0.35));"
+      aria-hidden="true"
+    >
+      <defs>
+        <radialGradient id={gradId} cx="50%" cy="45%" r="50%">
+          <stop offset="0%" stop-color="#35ff5a" stop-opacity="0.85"></stop>
+          <stop offset="70%" stop-color="#00aa22" stop-opacity="0.5"></stop>
+          <stop offset="100%" stop-color="#005511" stop-opacity="0.2"></stop>
+        </radialGradient>
+        <filter id={glowId}>
+          <feGaussianBlur stdDeviation="3" result="coloredBlur"></feGaussianBlur>
+          <feMerge>
+            <feMergeNode in="coloredBlur"></feMergeNode>
+            <feMergeNode in="SourceGraphic"></feMergeNode>
+          </feMerge>
+        </filter>
+      </defs>
+
+      <!-- Rings + particles (tilted plane) — back arcs behind planet -->
+      <g transform={`rotate(${ringTilt}, ${cx}, ${cy})`} data-orbit-plane>
+        <g data-orbit-ring-back>
+          {
+            rings.map((ring) => {
+              const x1 = cx + ring.rx;
+              const x2 = cx - ring.rx;
+              return (
+                <path
+                  d={`M ${x1} ${cy} A ${ring.rx} ${ring.ry} 0 0 1 ${x2} ${cy}`}
+                  fill="none"
+                  stroke="#35ff5a"
+                  stroke-width="0.5"
+                  opacity={ring.opacity}
+                ></path>
+              );
+            })
+          }
+        </g>
+
+        <g data-orbit data-duration="9" data-direction="1">
+          <circle cx="270" cy="150" r="2" fill="#35ff5a" opacity="0.7"></circle>
+        </g>
+        <g data-orbit data-duration="12" data-direction="-1">
+          <circle cx="150" cy="60" r="1.5" fill="#35ff5a" opacity="0.6"></circle>
+        </g>
+        <g data-orbit data-duration="7" data-direction="1">
+          <circle cx="100" cy="180" r="1" fill="#35ff5a" opacity="0.5"></circle>
+        </g>
+        <g data-orbit data-duration="10" data-direction="-1">
+          <circle cx="200" cy="220" r="1.5" fill="#35ff5a" opacity="0.6"></circle>
+        </g>
+        <g data-orbit data-duration="14" data-direction="1">
+          <circle cx="220" cy="100" r="1" fill="#35ff5a" opacity="0.5"></circle>
+        </g>
+      </g>
+
+      <!-- Planet (frontal, unchanged) -->
+      <circle
+        cx={cx}
+        cy={cy}
+        r="50"
+        fill="none"
+        stroke="#35ff5a"
+        stroke-width="1"
+        opacity="0.4"
+        filter={`url(#${glowId})`}
+        data-planet-glow
+      ></circle>
+
+      <g data-planet-core>
+        <circle cx={cx} cy={cy} r="45" fill={`url(#${gradId})`} filter={`url(#${glowId})`} data-planet-body></circle>
+        <path d="M 115 140 Q 150 132 185 140" fill="none" stroke="#35ff5a" stroke-width="1" opacity="0.45"></path>
+        <circle cx="130" cy="155" r="6" fill="none" stroke="#35ff5a" stroke-width="0.5" opacity="0.35"></circle>
+        <circle cx="170" cy="158" r="4" fill="none" stroke="#35ff5a" stroke-width="0.5" opacity="0.35"></circle>
+      </g>
+
+      <!-- Front arcs in front of planet -->
+      <g transform={`rotate(${ringTilt}, ${cx}, ${cy})`} data-orbit-ring-front>
+        {
+          rings.map((ring) => {
+            const x1 = cx - ring.rx;
+            const x2 = cx + ring.rx;
+            return (
+              <path
+                d={`M ${x1} ${cy} A ${ring.rx} ${ring.ry} 0 0 0 ${x2} ${cy}`}
+                fill="none"
+                stroke="#35ff5a"
+                stroke-width="0.5"
+                opacity={ring.opacity}
+              ></path>
+            );
+          })
+        }
+      </g>
+
+      <polyline data-bracket points="10,10 10,30 30,30" fill="none" stroke="#35ff5a" stroke-width="1" opacity="0.5"></polyline>
+      <polyline data-bracket points="290,10 290,30 270,30" fill="none" stroke="#35ff5a" stroke-width="1" opacity="0.5"></polyline>
+      <polyline data-bracket points="10,290 10,270 30,270" fill="none" stroke="#35ff5a" stroke-width="1" opacity="0.5"></polyline>
+      <polyline data-bracket points="290,290 290,270 270,270" fill="none" stroke="#35ff5a" stroke-width="1" opacity="0.5"></polyline>
+    </svg>
+  </div>
+</div>

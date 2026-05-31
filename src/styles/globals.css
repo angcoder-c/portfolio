@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+	--bg: #0f160f;
+	--surface: #172116;
+	--surface-2: #1d281c;
+	--surface-3: #202b1f;
+	--border: #344032;
+	--text: #e7f2de;
+	--text-muted: #8f9a88;
+	--primary: #35ff5a;
+	--primary-soft: #9dffa9;
+	--secondary: #00e5ff;
+	--neutral: #6f7a6b;
+	--success: #8cff95;
+	--warning: #ffe7a1;
+	--danger: #ff8a80;
+}
+
+@theme inline {
+	--font-terminal: "JetBrains Mono", monospace;
+	--color-bg: var(--bg);
+	--color-surface: var(--surface);
+	--color-surface-2: var(--surface-2);
+	--color-surface-3: var(--surface-3);
+	--color-border: var(--border);
+	--color-text: var(--text);
+	--color-text-muted: var(--text-muted);
+	--color-primary: var(--primary);
+	--color-primary-soft: var(--primary-soft);
+	--color-secondary: var(--secondary);
+	--color-neutral: var(--neutral);
+	--color-success: var(--success);
+	--color-warning: var(--warning);
+	--color-danger: var(--danger);
+}
+
+html {
+	color-scheme: dark;
+	scroll-behavior: smooth;
+}
+
+body {
+	background: var(--bg);
+	color: var(--text);
+}
+
+::selection {
+	background: var(--primary);
+	color: var(--bg);
+}
+
+.skill-block.filled {
+	background: var(--primary);
+	border-color: var(--primary);
+	box-shadow: 0 0 6px rgba(53, 255, 90, 0.35);
+}

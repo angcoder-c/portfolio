@@ -1,0 +1,73 @@
+---
+import TerminalIcon from '../icons/terminal.svg';
+import { profile, navigation } from '../data';
+import type { MobileNavConfig } from '../scripts/mobileNav';
+
+const mobileNavConfig: MobileNavConfig = {
+  toggleId: 'nav-toggle',
+  menuId: 'nav-menu',
+  linkSelector: '[data-nav-link]',
+};
+---
+
+<nav class="border-b border-border bg-surface">
+  <div class="flex items-center justify-between gap-4 px-4 py-4 font-terminal font-extrabold">
+    <a
+      href="/"
+      class="min-w-0 truncate text-sm text-success no-underline transition-colors hover:text-primary-soft sm:text-base"
+    >
+      {profile.username}:~
+    </a>
+
+    <button
+      type="button"
+      id="nav-toggle"
+      class="flex shrink-0 items-center justify-center border border-border p-2 text-primary transition-colors hover:border-primary hover:bg-surface-2 md:hidden"
+      aria-expanded="false"
+      aria-controls="nav-menu"
+      aria-label="Abrir menú de navegación"
+    >
+      <TerminalIcon class="h-5 w-5" />
+    </button>
+
+    <ul class="hidden items-center gap-4 md:flex">
+      {
+        navigation.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="nav-link whitespace-nowrap text-sm text-neutral no-underline transition-colors hover:text-primary lg:text-base"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  <ul
+    id="nav-menu"
+    class="hidden flex-col gap-1 border-t border-border px-4 py-3 md:hidden"
+  >
+    {
+      navigation.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            class="nav-link block py-2 text-sm text-neutral no-underline transition-colors hover:text-primary"
+            data-nav-link
+          >
+            {item.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<script define:vars={{ mobileNavConfig }}>
+  import { initMobileNav } from '../scripts/mobileNav.ts';
+
+  initMobileNav(mobileNavConfig);
+</script>

@@ -1,0 +1,22 @@
+---
+interface Props {
+  windowId: string;
+  class?: string;
+  id?: string;
+}
+
+const { windowId, class: className = '', id } = Astro.props;
+---
+
+<section
+  class:list={[
+    'border border-border bg-surface',
+    className,
+  ]}
+  id={id}
+  data-window
+>
+  <div class="p-4">
+    <slot />
+  </div>
+</section>

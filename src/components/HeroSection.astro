@@ -1,0 +1,47 @@
+---
+import { profile, hero, getHeroSocials } from '../data';
+import HeroPlanet from './HeroPlanet.astro';
+
+const heroSocials = getHeroSocials();
+---
+
+<section class="grid grid-cols-1 items-center gap-8 py-8 md:grid-cols-2 md:gap-12">
+  <div>
+    <p class="mb-4 font-bold text-primary">
+      <span data-type>{hero.command}</span>
+      <span class="cursor ml-0.5 inline-block h-3.5 w-2 align-text-bottom bg-primary"></span>
+    </p>
+
+    <h1
+      class="mb-4 text-2xl font-extrabold tracking-wide text-primary drop-shadow-[0_0_8px_rgba(53,255,90,0.35)] md:text-4xl"
+      data-hero-title
+    >
+      {profile.name}: {profile.role}
+    </h1>
+
+    <p class="mb-4 max-w-lg leading-relaxed text-text-muted" data-hero-tagline>
+      {hero.tagline}
+    </p>
+
+    <p class="mb-6 text-xs text-secondary sm:text-sm" data-hero-location>
+      <span class="text-text-muted">LOC:</span> {profile.location}
+    </p>
+
+    <div class="flex flex-wrap gap-3" data-hero-socials>
+      {
+        heroSocials.map((social) => (
+          <a
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="border border-border bg-surface px-4 py-2 text-xs font-bold tracking-wide text-primary no-underline transition-colors hover:border-primary hover:bg-primary hover:text-bg hover:shadow-[0_0_8px_rgba(53,255,90,0.3)]"
+          >
+            >> {social.label}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+
+  <HeroPlanet />
+</section>
