@@ -1,43 +1,59 @@
-# Astro Starter Kit: Minimal
+# Portfolio
+
+Portfolio personal construido con [Astro](https://astro.build/) y React. El sitio incluye una presentación principal, experiencia, proyectos, educación, habilidades, galería y formulario de contacto, con una interfaz tipo terminal y animaciones personalizadas.
+
+## Tecnologías
+
+- Astro
+- React
+- Tailwind CSS
+- GSAP
+- Nodemailer
+
+## Requisitos
+
+- Node.js 22.12 o superior
+- pnpm 10.33 o superior
+
+## Instalación
 
 ```sh
-pnpm create astro@latest -- --template minimal
+pnpm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Desarrollo
 
-## 🚀 Project Structure
+```sh
+pnpm dev
+```
 
-Inside of your Astro project, you'll see the following folders and files:
+Abre el proyecto en `http://localhost:4321`.
+
+## Producción
+
+```sh
+pnpm build
+pnpm preview
+```
+
+## Estructura básica
 
 ```text
 /
 ├── public/
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/
+│   ├── data/
+│   ├── lib/
+│   ├── pages/
+│   ├── scripts/
+│   ├── services/
+│   └── styles/
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Notas
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- El contenido principal del sitio se configura desde `src/data/portfolio.json`.
+- Las rutas principales están en `src/pages/`.
+- Los estilos globales viven en `src/styles/globals.css`.
