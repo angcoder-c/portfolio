@@ -9,29 +9,31 @@ interface Props {
 const { skills } = Astro.props;
 const SKILL_BLOCKS = 20;
 
-const tagToneClasses = ['skill-tag-a', 'skill-tag-b', 'skill-tag-c'] as const;
+const tagToneClasses = ['text-primary', 'text-secondary', 'text-success'] as const;
 ---
 
-<section id="skills" class="skills-zone">
-  <TerminalWindow windowId={skills.windowId ?? '0x424_STAT'}>
-    <p class="mb-6 font-bold text-[var(--skill-command)]" data-cmd>{skills.command}</p>
+<section id="skills">
+  <TerminalWindow
+    windowId={skills.windowId ?? '0x424_STAT'}
+    class="border-primary/35 bg-[linear-gradient(135deg,rgba(53,255,90,0.05)_0%,transparent_45%),var(--color-surface)] shadow-[inset_0_0_40px_rgba(53,255,90,0.03)]"
+  >
+    <p class="mb-6 font-bold text-primary" data-cmd>{skills.command}</p>
 
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
       {
         skills.items.map((skill) => (
-          <article data-skill-card class="skill-card border p-4">
+          <article
+            data-skill-card
+            class="group/card border border-primary/20 bg-[linear-gradient(90deg,rgba(53,255,90,0.03)_0%,transparent_60%),var(--color-surface-2)] p-4 transition-colors hover:border-primary/45 hover:bg-[linear-gradient(90deg,rgba(53,255,90,0.06)_0%,transparent_65%),var(--color-surface-3)]"
+          >
             <div class="mb-2 flex items-baseline justify-between gap-3">
-              <span class="text-sm font-bold text-[var(--skill-name)]">
+              <span class="text-sm font-bold text-primary-soft">
                 {skill.id} {skill.name}
               </span>
-              <span class="text-sm font-bold text-[var(--skill-level)]">{skill.level}%</span>
+              <span class="text-sm font-bold text-warning">{skill.level}%</span>
             </div>
 
-            <div
-              class="skill-bar mb-3 flex h-4 gap-0.5"
-              data-skill-bar
-              data-level={skill.level}
-            >
+            <div class="mb-3 flex h-4 gap-0.5" data-skill-bar data-level={skill.level}>
               {
                 Array.from({ length: SKILL_BLOCKS }).map(() => (
                   <div class="skill-block h-full w-2 border border-border bg-transparent" />
@@ -54,45 +56,3 @@ const tagToneClasses = ['skill-tag-a', 'skill-tag-b', 'skill-tag-c'] as const;
     </div>
   </TerminalWindow>
 </section>
-
-<style>
-  .skills-zone {
-    --skill-command: var(--primary);
-    --skill-name: var(--primary-soft);
-    --skill-level: var(--warning);
-    --skill-window-border: rgba(53, 255, 90, 0.35);
-    --skill-card-border: rgba(53, 255, 90, 0.2);
-    --skill-card-bg: rgba(53, 255, 90, 0.03);
-  }
-
-  .skills-zone :global(.skills-window) {
-    border-color: var(--skill-window-border);
-    background:
-      linear-gradient(135deg, rgba(53, 255, 90, 0.05) 0%, transparent 45%),
-      var(--surface);
-    box-shadow: inset 0 0 40px rgba(53, 255, 90, 0.03);
-  }
-
-  .skill-card {
-    border-color: var(--skill-card-border);
-    background: linear-gradient(90deg, var(--skill-card-bg) 0%, transparent 60%), var(--surface-2);
-    transition: border-color 0.2s, background 0.2s;
-  }
-
-  .skill-card:hover {
-    border-color: rgba(53, 255, 90, 0.45);
-    background: linear-gradient(90deg, rgba(53, 255, 90, 0.06) 0%, transparent 65%), var(--surface-3);
-  }
-
-  .skills-zone :global(.skill-tag-a) {
-    color: var(--primary);
-  }
-
-  .skills-zone :global(.skill-tag-b) {
-    color: var(--secondary);
-  }
-
-  .skills-zone :global(.skill-tag-c) {
-    color: var(--success);
-  }
-</style>

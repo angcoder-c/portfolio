@@ -1,13 +1,6 @@
 ---
 import TerminalIcon from '../icons/terminal.svg';
 import { profile, navigation } from '../data';
-import type { MobileNavConfig } from '../scripts/mobileNav';
-
-const mobileNavConfig: MobileNavConfig = {
-  toggleId: 'nav-toggle',
-  menuId: 'nav-menu',
-  linkSelector: '[data-nav-link]',
-};
 ---
 
 <nav class="border-b border-border bg-surface">
@@ -66,8 +59,12 @@ const mobileNavConfig: MobileNavConfig = {
   </ul>
 </nav>
 
-<script define:vars={{ mobileNavConfig }}>
+<script>
   import { initMobileNav } from '../scripts/mobileNav.ts';
 
-  initMobileNav(mobileNavConfig);
+  initMobileNav({
+    toggleId: 'nav-toggle',
+    menuId: 'nav-menu',
+    linkSelector: '[data-nav-link]',
+  });
 </script>

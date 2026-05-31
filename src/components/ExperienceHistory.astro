@@ -7,33 +7,38 @@ interface Props {
 }
 
 const { experience } = Astro.props;
-
 ---
 
-<section id="experience" class="experience-zone">
-  <TerminalWindow windowId={experience.windowId}>
-    <p class="mb-6 font-bold text-[var(--exp-command)]" data-cmd>{experience.command}</p>
+<section id="experience">
+  <TerminalWindow
+    windowId={experience.windowId}
+    class="border-secondary/40 bg-[linear-gradient(135deg,rgba(0,229,255,0.05)_0%,transparent_45%),linear-gradient(225deg,rgba(255,231,161,0.04)_0%,transparent_40%),var(--color-surface)] shadow-[inset_0_0_40px_rgba(255,231,161,0.04)]"
+  >
+    <p class="mb-6 font-bold text-primary" data-cmd>{experience.command}</p>
 
     <ol class="relative m-0 list-none space-y-10 p-0">
       {
         experience.items.map((item, index) => (
-          <li data-experience-commit class="experience-commit relative pl-7">
+          <li data-experience-commit class="group/commit relative pl-7">
             <span
-              class="experience-node absolute left-0 top-1.5 size-2 rounded-full"
+              class="absolute left-0 top-1.5 size-2 rounded-full bg-primary shadow-[0_0_8px_rgba(53,255,90,0.55)]"
               aria-hidden="true"
             />
             {
               index < experience.items.length - 1 && (
-                <span class="experience-spine absolute left-[3px] top-4 bottom-[-2.5rem] w-px" aria-hidden="true" />
+                <span
+                  class="absolute bottom-[-2.5rem] left-[3px] top-4 w-px bg-[linear-gradient(180deg,rgba(0,229,255,0.35)_0%,rgba(53,255,90,0.2)_50%,transparent_100%)]"
+                  aria-hidden="true"
+                />
               )
             }
 
             <header class="mb-2 text-xs sm:text-sm">
-              <span class="font-bold text-[var(--exp-period)]">[ {item.period} ]</span>
-              <span class="mx-2 text-[var(--exp-arrow)]">-&gt;</span>
-              <span class="font-extrabold tracking-wide text-[var(--exp-title)]">{item.title}</span>
+              <span class="font-bold text-warning">[ {item.period} ]</span>
+              <span class="mx-2 text-secondary">-&gt;</span>
+              <span class="font-extrabold tracking-wide text-primary-soft">{item.title}</span>
               {item.company && (
-                <span class="mt-1 block text-[11px] font-bold text-[var(--exp-highlight)] sm:mt-0 sm:inline sm:pl-2">
+                <span class="mt-1 block text-[11px] font-bold text-copy-soft sm:mt-0 sm:inline sm:pl-2">
                   @ {item.company}
                 </span>
               )}
@@ -42,8 +47,8 @@ const { experience } = Astro.props;
             <ul class="mb-3 space-y-1">
               {
                 item.highlights.map((line) => (
-                  <li class="text-[11px] leading-relaxed text-[var(--exp-highlight)] sm:text-xs">
-                    <span class="mr-1 text-[var(--exp-pipe)]">|</span>
+                  <li class="text-[11px] leading-relaxed text-copy-soft sm:text-xs">
+                    <span class="mr-1 text-secondary">|</span>
                     {line}
                   </li>
                 ))
@@ -55,7 +60,9 @@ const { experience } = Astro.props;
                 <div class="flex flex-wrap gap-1.5">
                   {
                     item.stack.map((tech) => (
-                      <span class="exp-tag">{tech}</span>
+                      <span class="border border-primary/14 bg-bg/55 px-[0.45rem] py-[0.1rem] text-[10px] leading-[1.45] text-tag-muted transition-colors group-hover/commit:border-primary/24 group-hover/commit:text-tag-hover">
+                        {tech}
+                      </span>
                     ))
                   }
                 </div>
@@ -67,59 +74,3 @@ const { experience } = Astro.props;
     </ol>
   </TerminalWindow>
 </section>
-
-<style>
-  .experience-zone {
-    --exp-command: var(--primary);
-    --exp-period: var(--warning);
-    --exp-arrow: var(--secondary);
-    --exp-title: var(--primary-soft);
-    --exp-pipe: var(--secondary);
-    --exp-highlight: #c8d8bf;
-    --exp-tag-text: #a3ad9c;
-    --exp-tag-border: rgba(53, 255, 90, 0.14);
-    --exp-tag-bg: rgba(15, 22, 15, 0.55);
-    --exp-node: var(--primary);
-    --exp-spine: rgba(0, 229, 255, 0.35);
-    --exp-window-border: rgba(0, 229, 255, 0.4);
-    --exp-window-glow: rgba(255, 231, 161, 0.04);
-  }
-
-  .experience-zone :global(.experience-window) {
-    border-color: var(--exp-window-border);
-    background:
-      linear-gradient(135deg, rgba(0, 229, 255, 0.05) 0%, transparent 45%),
-      linear-gradient(225deg, rgba(255, 231, 161, 0.04) 0%, transparent 40%),
-      var(--surface);
-    box-shadow: inset 0 0 40px var(--exp-window-glow);
-  }
-
-  .exp-tag {
-    border: 1px solid var(--exp-tag-border);
-    background: var(--exp-tag-bg);
-    padding: 0.1rem 0.45rem;
-    font-size: 10px;
-    line-height: 1.45;
-    color: var(--exp-tag-text);
-    transition: border-color 0.2s, color 0.2s;
-  }
-
-  .experience-commit:hover .exp-tag {
-    border-color: rgba(53, 255, 90, 0.24);
-    color: #b5c4ad;
-  }
-
-  .experience-node {
-    background: var(--exp-node);
-    box-shadow: 0 0 8px rgba(53, 255, 90, 0.55);
-  }
-
-  .experience-spine {
-    background: linear-gradient(
-      180deg,
-      var(--exp-spine) 0%,
-      rgba(53, 255, 90, 0.2) 50%,
-      transparent 100%
-    );
-  }
-</style>

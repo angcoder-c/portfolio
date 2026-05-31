@@ -1,7 +1,6 @@
 ---
 import TerminalIcon from '../../icons/terminal.svg';
 import { profile } from '../../data';
-import type { MobileNavConfig } from '../../scripts/mobileNav';
 
 interface Props {
   active?: 'root' | 'projects' | 'specs';
@@ -13,12 +12,6 @@ const links = [
   { id: 'projects', label: 'projects', href: '/projects' },
   { id: 'specs', label: 'specs', href: '#specs' },
 ] as const;
-
-const mobileNavConfig: MobileNavConfig = {
-  toggleId: 'project-nav-toggle',
-  menuId: 'project-nav-menu',
-  linkSelector: '[data-project-nav-link]',
-};
 ---
 
 <header class="border-b border-border bg-surface">
@@ -81,8 +74,12 @@ const mobileNavConfig: MobileNavConfig = {
   </nav>
 </header>
 
-<script define:vars={{ mobileNavConfig }}>
+<script>
   import { initMobileNav } from '../../scripts/mobileNav.ts';
 
-  initMobileNav(mobileNavConfig);
+  initMobileNav({
+    toggleId: 'project-nav-toggle',
+    menuId: 'project-nav-menu',
+    linkSelector: '[data-project-nav-link]',
+  });
 </script>

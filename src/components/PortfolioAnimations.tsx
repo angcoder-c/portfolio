@@ -137,7 +137,11 @@ export default function PortfolioAnimations() {
             blocks.forEach((block, i) => {
               if (i < filledCount) {
                 gsap.delayedCall(i * 0.04, () => {
-                  block.classList.add('filled');
+                  block.classList.add(
+                    'bg-primary',
+                    'border-primary',
+                    'shadow-[0_0_6px_rgba(53,255,90,0.35)]',
+                  );
                 });
               }
             });

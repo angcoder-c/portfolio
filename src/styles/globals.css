@@ -33,6 +33,9 @@
 	--color-success: var(--success);
 	--color-warning: var(--warning);
 	--color-danger: var(--danger);
+	--color-copy-soft: #c8d8bf;
+	--color-tag-muted: #a3ad9c;
+	--color-tag-hover: #b5c4ad;
 }
 
 html {
@@ -48,10 +51,4 @@ body {
 ::selection {
 	background: var(--primary);
 	color: var(--bg);
-}
-
-.skill-block.filled {
-	background: var(--primary);
-	border-color: var(--primary);
-	box-shadow: 0 0 6px rgba(53, 255, 90, 0.35);
 }

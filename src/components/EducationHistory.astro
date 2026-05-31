@@ -9,9 +9,9 @@ interface Props {
 const { education } = Astro.props;
 
 const statusStyles: Record<string, string> = {
-  COMPLETED: 'edu-status-completed',
-  IN_PROGRESS: 'edu-status-progress',
-  CERTIFIED: 'edu-status-certified',
+  COMPLETED: 'border-success/45 bg-success/10 text-success',
+  IN_PROGRESS: 'border-secondary/45 bg-secondary/10 text-secondary',
+  CERTIFIED: 'border-primary/45 bg-primary/10 text-primary',
 };
 
 function getCertLinkLabel(url: string, index: number): string {
@@ -27,31 +27,40 @@ function getCertLinkLabel(url: string, index: number): string {
 }
 ---
 
-<section id="education" class="education-zone">
-  <TerminalWindow windowId={education.windowId ?? '0x7F3_EDU'}>
-    <p class="mb-6 font-bold text-[var(--edu-command)]" data-cmd>{education.command}</p>
+<section id="education">
+  <TerminalWindow
+    windowId={education.windowId ?? '0x7F3_EDU'}
+    class="border-success/35 bg-[linear-gradient(135deg,rgba(140,255,149,0.04)_0%,transparent_45%),linear-gradient(225deg,rgba(0,229,255,0.04)_0%,transparent_40%),var(--color-surface)] shadow-[inset_0_0_40px_rgba(140,255,149,0.03)]"
+  >
+    <p class="mb-6 font-bold text-primary" data-cmd>{education.command}</p>
 
     <ol class="relative m-0 list-none space-y-4 p-0">
       {
         education.items.map((item, index) => (
           <li data-education-entry class="relative pl-7">
-            <span class="education-node absolute left-0 top-5 size-2 rounded-full" aria-hidden="true" />
+            <span
+              class="absolute left-0 top-5 size-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(0,229,255,0.5)]"
+              aria-hidden="true"
+            />
             {
               index < education.items.length - 1 && (
-                <span class="education-spine absolute left-[3px] top-7 bottom-[-1rem] w-px" aria-hidden="true" />
+                <span
+                  class="absolute bottom-[-1rem] left-[3px] top-7 w-px bg-[linear-gradient(180deg,rgba(0,229,255,0.3)_0%,rgba(140,255,149,0.18)_50%,transparent_100%)]"
+                  aria-hidden="true"
+                />
               )
             }
 
-            <article class="education-card flex flex-col gap-3 border p-4 sm:flex-row sm:items-center sm:justify-between">
+            <article class="group/card flex flex-col gap-3 border border-secondary/22 bg-[linear-gradient(90deg,rgba(0,229,255,0.03)_0%,transparent_55%),var(--color-surface-2)] p-4 transition-colors hover:border-secondary/45 hover:bg-[linear-gradient(90deg,rgba(0,229,255,0.06)_0%,transparent_60%),var(--color-surface-3)] sm:flex-row sm:items-center sm:justify-between">
               <div class="min-w-0 flex-1">
                 <header class="mb-1 text-xs sm:text-sm">
-                  <span class="font-bold text-[var(--edu-period)]">[ {item.period} ]</span>
-                  <span class="mx-2 text-[var(--edu-arrow)]">-&gt;</span>
-                  <span class="font-extrabold tracking-wide text-[var(--edu-title)]">{item.institution}</span>
+                  <span class="font-bold text-warning">[ {item.period} ]</span>
+                  <span class="mx-2 text-secondary">-&gt;</span>
+                  <span class="font-extrabold tracking-wide text-primary-soft">{item.institution}</span>
                 </header>
 
-                <p class="mb-2 text-[11px] leading-relaxed text-[var(--edu-degree)] sm:text-xs">
-                  <span class="mr-1 text-[var(--edu-pipe)]">|</span>
+                <p class="mb-2 text-[11px] leading-relaxed text-copy-soft sm:text-xs">
+                  <span class="mr-1 text-secondary">|</span>
                   {item.degree}
                 </p>
 
@@ -60,7 +69,9 @@ function getCertLinkLabel(url: string, index: number): string {
                     <div class="flex flex-wrap gap-1.5">
                       {
                         item.tags.map((tag) => (
-                          <span class="edu-tag">{tag}</span>
+                          <span class="border border-secondary/14 bg-bg/55 px-[0.45rem] py-[0.1rem] text-[10px] leading-[1.45] text-tag-muted transition-colors group-hover/card:border-secondary/24 group-hover/card:text-tag-hover">
+                            {tag}
+                          </span>
                         ))
                       }
                     </div>
@@ -69,8 +80,8 @@ function getCertLinkLabel(url: string, index: number): string {
 
                 {
                   item.certificationUrls && item.certificationUrls.length > 0 && (
-                    <div class="mt-3 border-t border-[var(--edu-card-border)] pt-3">
-                      <p class="mb-2 text-[10px] font-bold tracking-wider text-[var(--edu-cert-heading)]">
+                    <div class="mt-3 overflow-hidden border-t border-secondary/22 pt-3">
+                      <p class="mb-2 text-[10px] font-bold tracking-wider text-warning">
                         >> CERTIFICATION_URLS
                       </p>
                       <ul class="flex flex-col gap-1.5">
@@ -81,11 +92,13 @@ function getCertLinkLabel(url: string, index: number): string {
                                 href={url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="edu-cert-link inline-flex items-center gap-2 text-[11px] no-underline sm:text-xs"
+                                class="group/link inline-flex items-center gap-2 text-[11px] text-primary-soft no-underline transition-colors hover:text-primary hover:drop-shadow-[0_0_8px_rgba(53,255,90,0.35)] sm:text-xs"
                               >
-                                <span class="text-[var(--edu-pipe)]">|</span>
+                                <span class="text-secondary">|</span>
                                 <span class="font-bold">{getCertLinkLabel(url, certIndex)}</span>
-                                <span class="edu-cert-url truncate">→ {url}</span>
+                                <span class="truncate text-secondary group-hover/link:text-primary-soft">
+                                  → {url}
+                                </span>
                               </a>
                             </li>
                           ))
@@ -97,7 +110,7 @@ function getCertLinkLabel(url: string, index: number): string {
               </div>
 
               <div class="flex shrink-0 items-center gap-3 sm:flex-col sm:items-end">
-                <span class="text-[10px] font-bold tracking-wider text-[var(--edu-id)]">{item.id}</span>
+                <span class="text-[10px] font-bold tracking-wider text-neutral">{item.id}</span>
                 <span class:list={['border px-2 py-0.5 text-[10px] font-bold tracking-wider', statusStyles[item.status] ?? 'border-border text-text-muted']}>
                   {item.status}
                 </span>
@@ -109,110 +122,3 @@ function getCertLinkLabel(url: string, index: number): string {
     </ol>
   </TerminalWindow>
 </section>
-
-<style>
-  .education-zone {
-    --edu-command: var(--primary);
-    --edu-period: var(--warning);
-    --edu-arrow: var(--secondary);
-    --edu-title: var(--primary-soft);
-    --edu-degree: #c8d8bf;
-    --edu-tag-text: #a3ad9c;
-    --edu-tag-border: rgba(0, 229, 255, 0.14);
-    --edu-tag-bg: rgba(15, 22, 15, 0.55);
-    --edu-pipe: var(--secondary);
-    --edu-id: var(--neutral);
-    --edu-node: var(--secondary);
-    --edu-spine: rgba(0, 229, 255, 0.3);
-    --edu-window-border: rgba(140, 255, 149, 0.35);
-    --edu-card-border: rgba(0, 229, 255, 0.22);
-    --edu-card-bg: rgba(0, 229, 255, 0.03);
-    --edu-cert-heading: var(--warning);
-    --edu-cert-url: var(--secondary);
-  }
-
-  .education-zone :global(.education-window) {
-    border-color: var(--edu-window-border);
-    background:
-      linear-gradient(135deg, rgba(140, 255, 149, 0.04) 0%, transparent 45%),
-      linear-gradient(225deg, rgba(0, 229, 255, 0.04) 0%, transparent 40%),
-      var(--surface);
-    box-shadow: inset 0 0 40px rgba(140, 255, 149, 0.03);
-  }
-
-  .education-card {
-    border-color: var(--edu-card-border);
-    background: linear-gradient(90deg, var(--edu-card-bg) 0%, transparent 55%), var(--surface-2);
-    transition: border-color 0.2s, background 0.2s;
-  }
-
-  .education-card:hover {
-    border-color: rgba(0, 229, 255, 0.45);
-    background: linear-gradient(90deg, rgba(0, 229, 255, 0.06) 0%, transparent 60%), var(--surface-3);
-  }
-
-  .edu-tag {
-    border: 1px solid var(--edu-tag-border);
-    background: var(--edu-tag-bg);
-    padding: 0.1rem 0.45rem;
-    font-size: 10px;
-    line-height: 1.45;
-    color: var(--edu-tag-text);
-    transition: border-color 0.2s, color 0.2s;
-  }
-
-  .education-card:hover .edu-tag {
-    border-color: rgba(0, 229, 255, 0.24);
-    color: #b5c4ad;
-  }
-
-  .education-zone :global(.edu-status-completed) {
-    border-color: rgba(140, 255, 149, 0.45);
-    background: rgba(140, 255, 149, 0.1);
-    color: var(--success);
-  }
-
-  .education-zone :global(.edu-status-progress) {
-    border-color: rgba(0, 229, 255, 0.45);
-    background: rgba(0, 229, 255, 0.1);
-    color: var(--secondary);
-  }
-
-  .education-zone :global(.edu-status-certified) {
-    border-color: rgba(53, 255, 90, 0.45);
-    background: rgba(53, 255, 90, 0.1);
-    color: var(--primary);
-  }
-
-  .education-zone :global(.edu-cert-link) {
-    color: var(--primary-soft);
-    transition: color 0.2s, text-shadow 0.2s;
-  }
-
-  .education-zone :global(.edu-cert-link:hover) {
-    color: var(--primary);
-    text-shadow: 0 0 8px rgba(53, 255, 90, 0.35);
-  }
-
-  .education-zone :global(.edu-cert-url) {
-    color: var(--edu-cert-url);
-  }
-
-  .education-zone :global(.edu-cert-link:hover .edu-cert-url) {
-    color: var(--primary-soft);
-  }
-
-  .education-node {
-    background: var(--edu-node);
-    box-shadow: 0 0 8px rgba(0, 229, 255, 0.5);
-  }
-
-  .education-spine {
-    background: linear-gradient(
-      180deg,
-      var(--edu-spine) 0%,
-      rgba(140, 255, 149, 0.18) 50%,
-      transparent 100%
-    );
-  }
-</style>
