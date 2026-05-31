@@ -1,6 +1,4 @@
 ---
-import { hasVideoUrl, resolveVideoPreview } from '../../lib/projectMedia';
-
 interface Props {
   imageId: string;
   previewMode: string;
@@ -12,10 +10,35 @@ interface Props {
 
 const { imageId, previewMode, alt, title, imageUrl, videoUrl = null } = Astro.props;
 
-const showVideo = hasVideoUrl(videoUrl);
-const videoPreview = showVideo ? resolveVideoPreview(videoUrl) : null;
+const showVideo = typeof videoUrl === 'string' && videoUrl.trim() !== '';
 const mediaLabel = showVideo ? 'VIDEO_ID' : 'IMAGE_ID';
 const previewLabel = showVideo ? 'VIDEO_STREAM' : previewMode;
+
+function toIframeSrc(url: string): string {
+  const youtubeMatch = url.trim().match(
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([\w-]+)/,
+  );
+
+  if (youtubeMatch?.[1]) {
+    const videoId = youtubeMatch[1];
+    const params = new URLSearchParams({
+      autoplay: '1',
+      mute: '1',
+      loop: '1',
+      playlist: videoId,
+      controls: '0',
+      rel: '0',
+      modestbranding: '1',
+      playsinline: '1',
+    });
+
+    return `https://www.youtube.com/embed/${videoId}?${params.toString()}`;
+  }
+
+  return url.trim();
+}
+
+const iframeSrc = showVideo ? toIframeSrc(videoUrl) : '';
 ---
 
 <div id="media" class="border border-border bg-surface-2">
@@ -30,26 +53,14 @@ const previewLabel = showVideo ? 'VIDEO_STREAM' : previewMode;
 
   <div class="relative aspect-video overflow-hidden bg-bg">
     {
-      showVideo && videoPreview?.kind === 'embed' ? (
+      showVideo ? (
         <iframe
-          src={videoPreview.src}
+          src={iframeSrc}
           title={alt}
-          class="size-full border-0"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          class="absolute inset-0 h-full w-full border-0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         />
-      ) : showVideo && videoPreview?.kind === 'file' ? (
-        <video
-          src={videoPreview.src}
-          class="size-full object-cover"
-          controls
-          playsinline
-          preload="metadata"
-          aria-label={alt}
-        >
-          <track kind="captions" />
-        </video>
       ) : imageUrl ? (
         <>
           <img
@@ -90,7 +101,7 @@ const previewLabel = showVideo ? 'VIDEO_STREAM' : previewMode;
       )
     }
 
-    <span class="absolute bottom-3 left-3 border border-border bg-bg/80 px-2 py-0.5 text-[10px] text-text-muted backdrop-blur-sm">
+    <span class="pointer-events-none absolute bottom-3 left-3 border border-border bg-bg/80 px-2 py-0.5 text-[10px] text-text-muted backdrop-blur-sm">
       [ PREVIEW_MODE: {previewLabel} ]
     </span>
   </div>

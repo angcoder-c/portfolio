@@ -1,6 +1,10 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import type { GalleryImage, GalleryItem } from '../data/types';
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface Props {
   images: GalleryItem[];
@@ -45,6 +49,7 @@ export default function GalleryCarousel({ images }: Props) {
   const [startIndex, setStartIndex] = useState(0);
   const [modalIndex, setModalIndex] = useState<number | null>(null);
   const [mounted, setMounted] = useState(false);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   const maxStart = Math.max(0, total - VISIBLE_COUNT);
   const canScroll = total > VISIBLE_COUNT;
@@ -78,6 +83,32 @@ export default function GalleryCarousel({ images }: Props) {
   }, [modalIndex, total]);
 
   useEffect(() => setMounted(true), []);
+
+  useEffect(() => {
+    const element = carouselRef.current;
+    if (!element) {
+      return;
+    }
+
+    const animation = gsap.fromTo(
+      element,
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: element,
+          start: 'top 78%',
+        },
+      },
+    );
+
+    return () => {
+      animation.scrollTrigger?.kill();
+      animation.kill();
+    };
+  }, []);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -195,7 +226,7 @@ export default function GalleryCarousel({ images }: Props) {
 
   return (
     <>
-      <div data-gallery-carousel className="gallery-carousel">
+      <div ref={carouselRef} data-gallery-carousel className="gallery-carousel">
         <div className="border-y border-primary/25 py-4 sm:py-5">
           <div className="flex items-end justify-between gap-2 sm:gap-3">
             <button

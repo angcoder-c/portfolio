@@ -38,8 +38,7 @@ export default function ProjectDetailAnimations() {
       });
 
       gsap.from('[data-media-window]', {
-        opacity: 0,
-        scale: 0.97,
+        y: 16,
         duration: 0.6,
         delay: 1.2,
         ease: 'power3.out',

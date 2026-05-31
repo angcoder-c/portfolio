@@ -170,17 +170,6 @@ export default function PortfolioAnimations() {
         },
       });
 
-      // Gallery items
-      gsap.from('[data-gallery-carousel]', {
-        opacity: 0,
-        y: 20,
-        duration: 0.5,
-        scrollTrigger: {
-          trigger: '#gallery',
-          start: 'top 78%',
-        },
-      });
-
       // Contact section fade
       gsap.from('#contact', {
         opacity: 0,

@@ -11,25 +11,12 @@ interface Props {
 const { images, command = '$ ls ./gallery' } = Astro.props;
 ---
 
-<section id="gallery" class="gallery-zone">
-  <TerminalWindow windowId="0xGAL_IMG">
-    <p class="mb-6 font-bold text-[var(--gal-command)]" data-cmd>{command}</p>
+<section id="gallery">
+  <TerminalWindow
+    windowId="0xGAL_IMG"
+    class="border-secondary/35 bg-[linear-gradient(225deg,rgba(0,229,255,0.05)_0%,transparent_50%),var(--color-surface)] shadow-[inset_0_0_40px_rgba(0,229,255,0.03)]"
+  >
+    <p class="mb-6 font-bold text-primary" data-cmd>{command}</p>
     <GalleryCarousel client:load images={images} />
   </TerminalWindow>
 </section>
-
-<style>
-  .gallery-zone {
-    --gal-command: var(--primary);
-    --gal-item-border: rgba(0, 229, 255, 0.25);
-    --gal-window-border: rgba(0, 229, 255, 0.35);
-  }
-
-  .gallery-zone :global(.gallery-window) {
-    border-color: var(--gal-window-border);
-    background:
-      linear-gradient(225deg, rgba(0, 229, 255, 0.05) 0%, transparent 50%),
-      var(--surface);
-    box-shadow: inset 0 0 40px rgba(0, 229, 255, 0.03);
-  }
-</style>
