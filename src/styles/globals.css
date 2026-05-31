@@ -52,3 +52,11 @@ body {
 	background: var(--primary);
 	color: var(--bg);
 }
+
+.chat-markdown .katex {
+	color: var(--text);
+}
+
+.chat-markdown .katex-display {
+	color: var(--text);
+}

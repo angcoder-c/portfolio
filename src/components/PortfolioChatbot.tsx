@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent } from 'react';
 import type { ChatbotPersona } from '../data/types';
 import { resolveLocalized } from '../lib/chatbot/language';
+import ChatMessageContent from './ChatMessageContent';
 
 interface ChatMessage {
   id: string;
@@ -138,7 +139,11 @@ export default function PortfolioChatbot({ persona, enabled = true }: Props) {
                 <p className="mb-1 text-[10px] tracking-wide text-text-muted uppercase">
                   {message.role === 'user' ? 'usuario@terminal' : persona.name}
                 </p>
-                <p className="whitespace-pre-wrap">{message.content}</p>
+                {message.role === 'assistant' ? (
+                  <ChatMessageContent content={message.content} />
+                ) : (
+                  <p className="whitespace-pre-wrap">{message.content}</p>
+                )}
               </div>
             ))}
 
