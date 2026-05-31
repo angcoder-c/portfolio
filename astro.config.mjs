@@ -16,6 +16,16 @@ export default defineConfig({
       SMTP_PASS: envField.string({ context: 'server', access: 'secret' }),
       CONTACT_TO_EMAIL: envField.string({ context: 'server', access: 'secret' }),
       CONTACT_FROM_EMAIL: envField.string({ context: 'server', access: 'secret' }),
+      API_KEY: envField.string({ context: 'server', access: 'secret' }),
+      NAME: envField.string({ context: 'server', access: 'secret', optional: true }),
+      PROJECT_NAME: envField.string({ context: 'server', access: 'secret', optional: true }),
+      PROJECT_NUMBER: envField.string({ context: 'server', access: 'secret', optional: true }),
+      GEMINI_MODEL: envField.string({
+        context: 'server',
+        access: 'secret',
+        default: 'gemini-flash-latest',
+        optional: true,
+      }),
     },
   },
   vite: {

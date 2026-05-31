@@ -10,6 +10,7 @@ import SkillsSection from '../components/SkillsSection.astro';
 import EventsHistory from '../components/EventsHistory.astro';
 import GalleryGrid from '../components/GalleryGrid.astro';
 import ContactForm from '../components/ContactForm';
+import PortfolioChatbot from '../components/PortfolioChatbot';
 import PortfolioAnimations from '../components/PortfolioAnimations';
 import {
   profile,
@@ -21,6 +22,8 @@ import {
   events,
   gallery,
   contact,
+  getChatbotPersona,
+  isChatbotEnabled,
 } from '../data';
 ---
 
@@ -118,5 +121,10 @@ import {
 
     <PortfolioAnimations client:load />
     <HeroPlanetAnimations client:load />
+    <PortfolioChatbot
+      client:load
+      persona={getChatbotPersona()}
+      enabled={isChatbotEnabled()}
+    />
   </body>
 </html>

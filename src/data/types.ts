@@ -182,11 +182,16 @@ export interface ChatbotDocument {
   metadata?: Record<string, string>;
 }
 
+export interface LocalizedString {
+  es: string;
+  en: string;
+}
+
 export interface ChatbotPersona {
   name: string;
   tone: string;
-  greeting: string;
-  fallback: string;
+  greeting: string | LocalizedString;
+  fallback: string | LocalizedString;
 }
 
 export interface ChatbotConfig {

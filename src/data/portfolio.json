@@ -305,7 +305,7 @@
             "imageId": "1x001_MEDIA",
             "previewMode": "ACTIVE",
             "alt": "Lisp Interpreter interface preview",
-            "videoUrl": "https://youtu.be/rRaNTb0Z9qE"
+            "videoUrl": null
           },
           "specs": {
             "role": "Lead Developer",
@@ -649,5 +649,25 @@
       "error": "> ERROR: TRANSMISIÓN FALLIDA: Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde o contáctame directamente a angcoder.c@gmail.com",
       "sending": "> EJECUTANDO TRANSMISIÓN..."
     }
+  },
+  "chatbot": {
+    "config": {
+      "enabled": true,
+      "model": "gemini-flash-latest",
+      "maxTokens": 2048
+    },
+    "persona": {
+      "name": "PORTFOLIO_AI",
+      "tone": "terminal",
+      "greeting": {
+        "en": "> Assistant ready. Ask in English or Spanish about Angel, his projects, experience, or skills.",
+        "es": "> Asistente listo. Pregunta en inglés o español sobre Angel, sus proyectos, experiencia o habilidades."
+      },
+      "fallback": {
+        "en": "> I could not find enough information in the portfolio to answer that. Try another question.",
+        "es": "> No encontré información suficiente en el portfolio para responder eso. Prueba con otra pregunta."
+      }
+    },
+    "documents": []
   }
 }
