@@ -14,5 +14,9 @@ export function generateAsciiTitle(title: string): string[] {
     whitespaceBreak: true,
   });
 
+  if (!art) {
+    return [];
+  }
+
   return art.split('\n');
 }
