@@ -11,7 +11,6 @@ export function generateAsciiTitle(title: string): string[] {
     horizontalLayout: 'default',
     verticalLayout: 'default',
     width: 120,
-    whitespaceBreak: true,
   });
 
   return art.split('\n');
